@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{xcolor}
+
+\usepackage{indentfirst}
+
+%\usepackage[normalem]{ulem} % for crossing text out - \sout
+
+% Redefining \def is impossible. I tried, but it is impossible.
+%\let\def_prev\def
+
+\newcommand{\example}{{\itshape Пример. }}
+\newcommand{\equals}{\Leftrightarrow}
+\newcommand{\defi}{{\itshape Определение. }}
+\newcommand{\exc}{{\bfseries Упражнение. }}
+\newcommand{\norm}[1]{\| #1 \|}
+
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%         THEOREM DEFINITION LINES            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{lem}{Лемма}
+\newtheorem{def}{Определение}
+
+
+\begin{document}
+	\title{Основы функционального анализа, второй семестр.}
+	\author{Тресков Сергей Андреевич}
+	\maketitle
+	
+	\section{Векторные пространства}
+	
+    Пора доказать <<контрабанду>>, введенную в прошлом разделе. Докажем, что норма, введенная на основе скалярного произведения, 
+    $$\| x \| = \sqrt{<x,x>}$$
+    соответствует всем ранее указанным аксиомам.
+
+    \begin{enumerate}
+    \item Очевидно из первого свойства скалярного произведения.
+    \item $\norm{\lambda x}^2 = \lambda \bar{\lambda} <x, x> = | \lambda |^2 \cdot \norm{x}^2$
+    \item $\norm{x+y} \overset{?}{\leq} \norm{x} + \norm{y}$
+	      $$\norm{x + y} = \norm{x}^2 + <x,y> + <y,x> + \norm{y}^2 \leq \norm{x}^2 + 2 \norm{x} \norm{y} + \norm{y}^2
+			= (\norm{x} + \norm{y})^2
+	      $$
+    \end{enumerate}
+	Таким образом, пространство со скалярным произведением является нормированным пространством и определяет норму на нем.
+	
+	\begin{def}
+		Подмножество векторного пространства называется \textbf{выпуклым}, если оно содержит вместе с любыми двум точками соединяющий
+		их отрезок.
+	\end{def}
+	
+\end{document}
