@@ -17,7 +17,7 @@
 
 \newcommand{\example}{{\itshape Пример. }}
 \newcommand{\equals}{\Leftrightarrow}
-\newcommand{\defi}{{\itshape Определение. }}
+%\newcommand{\defi}{{\itshape Определение. }}
 \newcommand{\exc}{{\bfseries Упражнение. }}
 \newcommand{\norm}[1]{\| #1 \|}
 
@@ -28,8 +28,11 @@
 %         THEOREM DEFINITION LINES            %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newtheorem{lem}{Лемма}
-\newtheorem{def}{Определение}
+\newtheorem{lem}{Лемма}[section]
+\newtheorem{defi}{Определение}[section]
+\newtheorem{theorem}{Теорема}[section] % statement
+\newtheorem{state}{Утверждение}[section] % statement
+%\newtheorem{proof}{Определение}
 
 
 \begin{document}
@@ -53,9 +56,49 @@
     \end{enumerate}
 	Таким образом, пространство со скалярным произведением является нормированным пространством и определяет норму на нем.
 	
-	\begin{def}
-		Подмножество векторного пространства называется \textbf{выпуклым}, если оно содержит вместе с любыми двум точками соединяющий
-		их отрезок.
-	\end{def}
+	\begin{defi}
+		Подмножество векторного пространства называется \textbf{выпуклым}, если оно содержит вместе с любыми двумя 
+		точками соединяющий их отрезок.
+	\end{defi}
+
+	В доказательстве последующей теоремы потребуется данное утверждение:
+	\begin{state}
+		Скалярное произведение непрерывно по первому и второму аргументам.
+		$$<x, y> - <x', y'> = <x, y> - <x', y> + <x', y> - <x', y'> \leq$$
+		$$\leq \norm{x - x'}\cdot \norm{y} + \norm{x'} \cdot \norm{y - y'}$$
+	\end{state}
 	
+	\begin{theorem}
+		Пусть G' --- замкнутое выпуклое подмножество H. H - гильбертово пространство. Тогда
+		$$\forall h \in H \exists! g \in G \norm{h-g} = \underset{g' \in G}{inf} \norm{h-g'} = \alpha$$
+	\end{theorem}
+	\begin{proof}
+		Рассмотрим последовательность $g_1, g_2, ..., g_n$ $\norm{h - g_n} \rightarrow \alpha$
+		$$\forall \epsilon \exists N(\epsilon), n > N(\epsilon) \norm{h - g_n} < \alpha + \epsilon$$
+		Примем $n, m > N(\epsilon)$. Рассмотрим вектора $h - g_n$, $h - g_m$, запишем для них тождество параллелограмма.
+		$$\norm{g_n - g_m} = 2 \cdot \norm{h - g_n} + 2 \cdot \norm{h - g_m}$$
+		$$\norm{g_n - g_m}^2 = 2 \cdot \norm{h - g_n}^2 + 2 \cdot \norm{h - g_m}^2 - \norm{2h - (g_n + g_m)}^2$$
+		$$\norm{g_n - g_m}^2 = 2 \cdot \norm{h - g_n}^2 + 2 \cdot \norm{h - g_m}^2 - 4 \cdot \norm{h - \frac{g_n + g_m}{2}}^2 \leq$$
+		В силу выпуклости подмножества, $\frac{g_n + g_m}{2} \in G$, что означает $\norm{h - \frac{g_n + g_m}{2}} \geq \alpha$, так
+		как $\alpha$ - точная нижняя грань.
+		$$\leq 2 (\alpha + \epsilon)^2 + 2 (\alpha + \epsilon)^2 - 4 \alpha^2 = 8 \alpha \epsilon + 4 \epsilon^2$$
+		Из этого выражения получаем, что последовательность $\norm{h - g_n}$ --- фундаментальная, следовательно найдется $g_0$, такое,
+		что $\norm{h - g_0} = \alpha$.
+		
+		Также докажем единственность. Пусть таких векторов найдется два: g' и g''. Тогда
+		$$\norm{h - g'} - \norm{h - g''} = \alpha$$
+		$$\norm{g' - g''}^2 = 2 \norm{h - g'}^2 + 2 \norm{h - g''}^2 - 4 \norm{h - \frac{g' + g''}{2}} \leq$$
+		$$\leq 4 \alpha^2 - 4 \alpha^2 = 0$$
+		$\Rightarrow g' = g'' \Rightarrow$ такой вектор найдется только один.
+	\end{proof}
+	
+	\begin{theorem}
+		G - замкнутое подпространство H. $h \in H, g \in G$, g --- ближайший. Тогда $f = (h - g) \perp G$
+	\end{theorem}
+	Мы можем выделить ближайший вектор, так как подпространство обязательно является выпуклым. {\color{gray} Деваться больше некуда.}
+	\begin{proof}
+		Предположим, что это не так:
+		$$<f, g_1> = \alpha \neq 0$$
+		Рассмотрим вектор $g^* = g + \frac{\bar{<g1 ,f>}}{\norm{g1}^2} \cdot g_1$
+	\end{proof}
 \end{document}
