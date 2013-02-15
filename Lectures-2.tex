@@ -15,6 +15,20 @@
 % Redefining \def is impossible. I tried, but it is impossible.
 %\let\def_prev\def
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           MATH OPERATORS SPACING            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\let\existstemp\exists
+\let\foralltemp\forall
+\renewcommand{\exists}{\: \existstemp \:}
+\newcommand{\existsonly}{\: \existstemp ! \:}
+\renewcommand{\forall}{\: \foralltemp \:}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            COMMAND SHORTHANDS               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\example}{{\itshape Пример. }}
 \newcommand{\equals}{\Leftrightarrow}
 %\newcommand{\defi}{{\itshape Определение. }}
@@ -71,18 +85,18 @@
 	
 	\begin{theorem}
 		Пусть G' --- замкнутое выпуклое подмножество H. H - гильбертово пространство. Тогда
-		$$\forall h \in H \exists! g \in G \norm{h-g} = \underset{g' \in G}{inf} \norm{h-g'} = \alpha$$
+		$$\forall h \in H \existsonly g \in G \norm{h-g} = \underset{g' \in G}{inf} \norm{h-g'} = \alpha$$
 	\end{theorem}
 	\begin{proof}
 		Рассмотрим последовательность $g_1, g_2, ..., g_n$ $\norm{h - g_n} \rightarrow \alpha$
-		$$\forall \epsilon \exists N(\epsilon), n > N(\epsilon) \norm{h - g_n} < \alpha + \epsilon$$
-		Примем $n, m > N(\epsilon)$. Рассмотрим вектора $h - g_n$, $h - g_m$, запишем для них тождество параллелограмма.
+		$$\forall \varepsilon \exists N(\varepsilon), n > N(\varepsilon) \norm{h - g_n} < \alpha + \varepsilon$$
+		Примем $n, m > N(\varepsilon)$. Рассмотрим вектора $h - g_n$, $h - g_m$, запишем для них тождество параллелограмма.
 		$$\norm{g_n - g_m} = 2 \cdot \norm{h - g_n} + 2 \cdot \norm{h - g_m}$$
 		$$\norm{g_n - g_m}^2 = 2 \cdot \norm{h - g_n}^2 + 2 \cdot \norm{h - g_m}^2 - \norm{2h - (g_n + g_m)}^2$$
 		$$\norm{g_n - g_m}^2 = 2 \cdot \norm{h - g_n}^2 + 2 \cdot \norm{h - g_m}^2 - 4 \cdot \norm{h - \frac{g_n + g_m}{2}}^2 \leq$$
 		В силу выпуклости подмножества, $\frac{g_n + g_m}{2} \in G$, что означает $\norm{h - \frac{g_n + g_m}{2}} \geq \alpha$, так
 		как $\alpha$ - точная нижняя грань.
-		$$\leq 2 (\alpha + \epsilon)^2 + 2 (\alpha + \epsilon)^2 - 4 \alpha^2 = 8 \alpha \epsilon + 4 \epsilon^2$$
+		$$\leq 2 (\alpha + \varepsilon)^2 + 2 (\alpha + \varepsilon)^2 - 4 \alpha^2 = 8 \alpha \varepsilon + 4 \varepsilon^2$$
 		Из этого выражения получаем, что последовательность $\norm{h - g_n}$ --- фундаментальная, следовательно найдется $g_0$, такое,
 		что $\norm{h - g_0} = \alpha$.
 		
