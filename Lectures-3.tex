@@ -183,6 +183,41 @@
 		\item Одноначность (при принятых условиях).
 		\item Если $n > m$, тогда $1_n \perp \mathtt{P}_m$
 		\item Имеет место рекуррентное соотношение: \\
-		%x \cdot q_n(x) = 
+		$$ x \cdot q_n(x) = 
+		\alpha_{n+1,n} q_{n+1} + \alpha_{n,n} q_n(x) + \alpha_{n-1, n} q_{n-1} (x) + \ldots + \alpha_{n-k, n} q_{n-k} (x) $$
+		
+		Где $\alpha_{k, n}$ - некоторые коэффициенты, с k --- степенью текущего слагаемого и n --- степень многочлена, который домножается
+		на x.
+		
+		Рассмотрим $\scal{x q_n, q_k(x)} = \int_a^b x q_n(x) q_k(x) dx = \alpha_{k,n} \int q_k(x) q_k(x) = \alpha_{k,n}$.
+		Отсюда следует, что $\alpha_{k,n} = \alpha_{n,k} \Rightarrow$ для $n > k+1,alpha_{k,n} = 0$. Это означает, что исходное соотношение
+		может быть записано как:
+		$$ x \cdot q_n(x) = 
+		\alpha_{n+1,n} q_{n+1} + \alpha_{n,n} q_n(x) + \alpha_{n-1, n} q_{n-1} (x)$$
+		Запишем $q_n = a_n x^n + b_n x^{n-1} + \ldots$
+		Тогда $\alpha_{n+1, n} = \frac{a_n}{a_{n+1}}$ и, в силу равенства $\alpha_{k,n} = \alpha_{n,k}$, получаем $\alpha_{n-1, n} 
+		= \frac{a_{n-1}}{a_n}$. В рассматриваемом рекуррентном соотношении, коэффициенты при $x_n$ должны быть равны с обеих
+		сторон, что означает $b_n = \alpha_{n+1, n} b_{n+1} + \alpha_{n,n} a_n = \frac{a_n}{a_{n+1}} b_{n+1} + \alpha_{n,n} a_n$, 
+		откуда следует $\alpha_{n,n} = \frac{b_n}{a_n} - \frac{b_{n+1}}{a_{n+1}}$. Теперь, наше рекуррентное соотношение
+		$\mathfrak{COMPLETE}$:
+		$$ x \cdot q_n(x) = 
+		\frac{a_n}{a_{n+1}} q_{n+1} + (\frac{b_n}{a_n} - \frac{b_{n+1}}{a_{n+1}}) q_n(x) + \frac{a_{n-1}}{a_n} q_{n-1} (x)$$
 	\end{itemize}
+	
+	\begin{state}
+		Все ортогональные многочлены степени n имеют ровно n корней, причем эти корни:
+		\begin{enumerate}
+			\item $x_i \in \mathbb{R}$
+			\item $x_i$ --- простые корни.
+			\item $x_i \in (a,b)$
+		\end{enumerate}
+		\begin{proof}
+			Используем метод <<от противного>>: \\
+			Пусть существует только $k < n$ корней в $(a,b)$. Считаем k корней, где $q_n(x)$ меняет знак. Рассмотрим 
+			$\mathtt{P}_k = (x - x_1) \cdots (x - x_k)$. Тогда $q_n(x) \mathtt{P}_k(x)$ сохраняет знак. 
+			$$ \int_a^b \mathtt{P}_k (x) q_n(x) h(x) \neq 0$$, что противоречит предположению $k < n$. \\
+			Отсюда следует $k = n$, а это и означает, что все корни многочлена $q_n$ расположены на интервале $(a,b)$ 
+			и различны.\\
+		\end{proof}
+	\end{state}
 \end{document}
