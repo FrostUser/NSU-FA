@@ -269,4 +269,57 @@
 		С другой стороны, при ограниченности оператора, его норма будет конечна, по приведённым
 		выше равенствам.
 	\end{proof}
+	
+	Сделаем также ещё одно замечание, исходящее из определения:
+	$$ \frac{\norm{Ax}} \leq \norm{A} $$
+	$$ \norm{Ax} \leq \norm{A} \cdot \norm{x} $$
+	
+	Мы в очередной раз что-то назвали нормой. Но {\color{gray}гуманно} верно ли это?
+	
+	\exc Для нормы линейного оператора выполнены все аксиомы нормы.
+	% TODO: потом хотелось бы написать здесь доказательство и переписать это как "Утверждение".
+	
+	Также, остается упражнение по доказательству еще одного полезного свойства:
+	
+	\exc Доказать выполнение равенства $\norm{A} - \norm{B} \leq \norm{A-B}$.
+	
+	\begin{state}
+		$$\norm{Ax} \leq k \norm{x} \Rightarrow \norm{A} \leq k$$
+	\end{state}
+	
+	\begin{state}
+		Для нормы композиции линейных операторов верно неравенство 
+		$$\norm{A\cdot B} \leq \norm{A} \cdot \norm{B}$$
+	\end{state}
+	\begin{proof}
+		$$ \norm{(AB)x} = \norm{A(Bx)} \leq \norm{A} \cdot \norm{Bx} \leq \norm{x} \cdot \norm{A} \cdot \norm{B} $$
+		Отсюда 
+		$$ \norm{AB} \leq \norm{A} \cdot \norm{B} $$
+		что и требовалось доказать. \\
+	\end{proof}
+	
+	\subsection*{Оператор Гильберта--Шмидта}
+	Рассмотрим пространства $\mathbb{L}_2(\mathbb{R}^n)$ и $\mathbb{L}_2(\mathbb{R}^k)$, а также функцию
+	$$ k(x,y) \in \mathbb{L}_2(\mathbb{R}^{n+k}), x \in \mathbb{R}^n, y \in \mathbb{R}^k$$
+	
+	\begin{defi}
+		\textbf{Оператором Гильберта Шмидта} назовём оператор:
+		$$ (Af)(t) \overset{df}{=} \underset{\mathbb{R}^k}{\int} k(t,y) f(y) dy $$
+	\end{defi}
+	
+	Покажем, что функция $(Af)(t)$ определена почти для всех $t$. Пользуясь определением скалярного произведения в $\mathbb{L}_2$, 
+	видим, что $\norm{(Af)(t)}^2 = (\scal{f}{k})^2 \leq \norm{f}^2 \cdot \underset{\text{на }\mathbb{R}^k}{\norm{k}^2}$
+	
+	$$ \norm{(Af)(t)}^2 \leq \underset{\mathbb{R}^k}{\int} |f(y)|^2 dy \cdot \underset{\mathbb{R}^k}{\int} |k(t,y)|^2 dy $$
+	
+	Проинтегрируем обе части выражения по множеству $\mathbb{R}^n$:
+	
+	$$ \underset{\mathbb{R}^n}{\int} \leq \underset{\mathbb{R}^k}{\int} |f(y)|^2 dy 
+	   \cdot \underset{\mathbb{R}^n}{\int} \underset{\mathbb{R}^k}{\int} |k(t,y)|^2 dy $$
+	
+	$k(t,y)$ почти всюду определена в $\mathbb{R}^k$, интегрируема
+	в $\mathbb{R}^k$ по условию. Значит, по теореме Фубини можем переставить пределы интегрирования 
+	и перейти к норме на $\mathbb{R}^n$.
+	
+	$$ \underset{\mathbb{R}^n}{\int} \leq \norm{f}^2_{\mathbb{L}_2} \cdot \norm{k}^2_{\mathbb{L}_2} $$
 \end{document}
