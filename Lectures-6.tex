@@ -39,7 +39,9 @@
 \newcommand{\exc}{{\bfseries Упражнение. }}
 \newcommand{\norm}[1]{\| #1 \|}
 \newcommand{\scal}[2]{\, < \!\! #1, #2 \!\! > \,}
+
 \newcommand{\Sum}[2]{\underset{#1}{\overset{#2}{\sum}}}
+\newcommand{\Int}[2]{\underset{#1}{\overset{#2}{\int}}}
 
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\geq}{\geqslant}
@@ -73,7 +75,11 @@
 	
 	\example Оператор дифференцирования $\frac{d}{dx} \mathbb{L}_2(0, 1) \rightarrow \mathbb{C}_2(0, 1)$ является неограниченным. 
 	Достаточно рассмотреть $\norm{sin(nx)}_{\mathbb{L}_2} \leq 1$. При воздействии на синус оператором дифференцирования, получим
-	$|n \cdot cos(nx)| \geq n \cdot cos^2(nx) = n \cdot \frac{1 + cos(2nx)}{2}$.
+	$$|n \cdot cos(nx)| \geq n \cdot cos^2(nx) = n^2 \cdot \frac{1 + cos(2nx)}{2}$$
+	Таким образом, легко увидеть неограниченность нормы $n \cdot cos(nx)$:
+	$$\norm{n \cdot cos(nx)}_{\mathbb{L}_2(0,1)}^2 \geq \frac{n^2}{4} \Int{0}{1} (1 + 2 cos(2nx) + cos^2(2nx)) dx \geq$$
+	$$\geq \frac{n^2}{4} \Int{0}{1} (1 + 2 cos(2nx)) dx \geq \frac{n^2}{4} - 1$$
+	При $n \rightarrow \infty$ этот образ не попадает в конечный шар, значит оператор $\frac{d}{dx}$ неограничен.
 	
 	% Доразобраться
 	
@@ -96,7 +102,7 @@
 		Воздействуем операторами $A_1$ и $A_2$ на данные элементы. Получаем:
 		$$A_2 x = y$$ 
 		Где $y$ --- некоторый элемент множества $E_2$. С другой стороны, мы можем x представить как предел последовательности $\{x_n\}$
-		$$y = lim (y_n) = lim(A_1 x_n)$$
+		$$y = \lim (y_n) = \lim(A_1 x_n)$$
 		Теперь рассмотрим элемент $z = \alpha x + \beta y$ и сходящуюся к нему последовательность $z_n = \alpha x_n + \beta y_n$.
 		Воздействуюя оператором $A_1$ на $z_n$, получаем выражение:
 		$$A_1 z_n = \alpha A_1 x_n + \beta A_1 y_n$$
@@ -161,11 +167,11 @@
 	\begin{proof}
 		Очевидно. {\color{gray}Sorry, но я и так умаялся предыдущее доказательство писать, а оно тоже очевидное.}
 	\end{proof}
-	
+
 	\example $P_n : l_2 \rightarrow l_2$ --- оператор проектирования на n-мерное подпространство.
 	$$P_n : (x_1, \dots , x_n, x_{n+1}, \dots) \longmapsto (x_1, \dots, x_n, 0, 0, 0, \dots)$$
 	Рассматривая свойства пространства $l_2$, легко понять, что $P_n \rightarrow I$. Действительно, так как $x_n$ --- элементы 
-	сходящегося ряда, то $lim (x_n) \rightarrow 0$. Таким образом, норма <<хвоста>> ряда будет стремиться к нулю.
+	сходящегося ряда, то $\lim (x_n) \rightarrow 0$. Таким образом, норма <<хвоста>> ряда будет стремиться к нулю.
 	%\marginnote{\footnotesize I --- тождественный оператор}[-1.5cm]
 	Но, в то же время, равномерной сходимости не достигается: $\norm{P_n - I} = 1$. Следовательно, обычная сходимость не влечёт
 	равномерную.
@@ -288,7 +294,9 @@
 	\end{state}
 	\begin{proof}
 		Вынесем $A$ за скобки:
-		$$ A + \Delta = A \cdot \underbrace{(I + A^{-1} \cdot \Delta)}_{\text{Обратимо по предыдущей теоремы.}} $$
+		$$ A + \Delta = A \cdot \underbrace{(I + A^{-1} \cdot \Delta)}_
+		   { \mathclap{\text{Обратимо по предыдущей теореме.}} } 
+		$$
 	\end{proof}
 	
 	\subsection*{Спектр линейного оператора}
