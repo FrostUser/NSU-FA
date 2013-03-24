@@ -10,7 +10,9 @@
 
 \usepackage{indentfirst}
 
-\usepackage{marginnote}
+%\usepackage{marginnote} % this is used for notes on the right margin --- \marginnote{\footnotesize txt}
+
+\usepackage{mathtools} % for mathclap command
 
 %\usepackage[normalem]{ulem} % for crossing text out - \sout
 
@@ -50,6 +52,12 @@
 \newtheorem{defi}{Определение}[section]
 \newtheorem{theorem}{Теорема}[section] % statement
 \newtheorem{state}{Утверждение}[section] % statement
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%             GRAPHICS INCLUSION              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{graphicx}
 
 \setcounter{section}{4}
 
@@ -256,4 +264,52 @@
 	$$ x = A^{-1} y $$
 	$$ \norm{A^{-1} y} \leq \frac{1}{m} \norm{y} $$
 	И это, в силу определения нормы оператора, означает $$\norm{A} \leq \frac{1}{m}$$
+	
+	\begin{theorem}
+		Пусть $F$ --- полное пространство, $A : F \rightarrow F$ --- линейный оператор, $\norm{A} \leq 1$.
+		Тогда оператор $I_F - A$ является обратимым, причём обратный оператор определяется как:
+		$$
+			(I_F - A)^{-1} = \Sum{0}{\infty} A^n
+		$$
+	\end{theorem}
+	Стоит отметить, что ряд $\Sum{0}{\infty} A^n$ будет сходиться, так как $\norm{A} \leq 1$. Более того, сумма этого ряда определяется
+	как сумма бесконечно убывающей геометрической прогрессии.
+	\begin{proof}
+		Умножим $(I_F - A)$ на частичную сумму ряда $\Sum{0}{N} A^n$:
+		$$ (\Sum{0}{N} A^n ) \cdot (I_F - A) = I_F - A^{N+1} \rightarrow I_F $$
+		Взяв $N \rightarrow \infty$ превратим предел в равенство; умножим обе части уравнения на $(I_F - A)^{-1}$. Получаем
+		$$ \Sum{0}{\infty} A^n = (I_F - A)^{-1} $$
+		что совпадает с формулой, указанной в теореме.
+	\end{proof}
+	
+	\begin{state}
+		A --- обратим, $\Delta$ --- ограниченный оператор, $\norm{\Delta} \leq \frac{1}{\norm{A^{-1}}}$, тогда оператор 
+		$A + \Delta$ будет обратимым.
+	\end{state}
+	\begin{proof}
+		Вынесем $A$ за скобки:
+		$$ A + \Delta = A \cdot \underbrace{(I + A^{-1} \cdot \Delta)}_{\text{Обратимо по предыдущей теоремы.}} $$
+	\end{proof}
+	
+	\subsection*{Спектр линейного оператора}
+	
+	Рассмотрим $A : F \rightarrow F$:%, $F$ --- плотное пространство.
+	$$(A - \lambda \cdot I) = \lambda \cdot (\frac{A}{\lambda	} - I)$$
+	Как видно из ранее приведённых теорем, оператор $(A - \lambda \cdot I)$ будет обратимым при достаточно больших значениях $\lambda$.
+	
+	Запишем все группы $\lambda$, определяемые свойствами оператора $(A - \lambda \cdot I)$
+	
+	\begin{center}
+		\includegraphics[width=1.0\linewidth]{Lectures-6-spectrum_scheme.pdf}\\
+	\end{center}
+	
+	Для каждого $\lambda \in r(A)$ определяется ограниченный, с всюду плотной областью определения оператор
+	$$ R_{\lambda} = (A - \lambda I)^{-1}$$
+	Где $R_{\lambda}$ называется \textbf{резолентным оператором}. \\
+	Также отметим равенство, верное для любого линейного оператора:
+	$$
+		\overbrace{r(A)}^{ \mathclap{\text{Регулярные значения $A$}} } \cup 
+		\underbrace{\sigma_1 (A) \cup \sigma_2 (A) \cup \sigma_3 (A)}_{\text{Спектр $A$}} = 
+		r(A) \cup \sigma(A) = \mathbb{C}
+	$$
 \end{document}
