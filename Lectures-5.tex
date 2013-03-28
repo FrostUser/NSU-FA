@@ -36,6 +36,9 @@
 \newcommand{\norm}[1]{\| #1 \|}
 \newcommand{\scal}[2]{\, < \!\! #1, #2 \!\! > \,}
 
+\newcommand{\Sum}[2]{\underset{#1}{\overset{#2}{\sum}}}
+\newcommand{\Int}[2]{\underset{#1}{\overset{#2}{\int}}}
+
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\geq}{\geqslant}
 
@@ -314,12 +317,12 @@
 	
 	Проинтегрируем обе части выражения по множеству $\mathbb{R}^n$:
 	
-	$$ \underset{\mathbb{R}^n}{\int} \leq \underset{\mathbb{R}^k}{\int} |f(y)|^2 dy 
-	   \cdot \underset{\mathbb{R}^n}{\int} \underset{\mathbb{R}^k}{\int} |k(t,y)|^2 dy $$
+	$$ \Int{\mathbb{R}^n}{} \norm{(Af)(t)}^2 \, dt \leq \underset{\mathbb{R}^k}{\int} |f(y)|^2 \, dy 
+	   \cdot \Int{\mathbb{R}^n}{} \Int{\mathbb{R}^k}{} |k(t,y)|^2 \, dt \, dy $$
 	
 	$k(t,y)$ почти всюду определена в $\mathbb{R}^k$, интегрируема
 	в $\mathbb{R}^k$ по условию. Значит, по теореме Фубини можем переставить пределы интегрирования 
 	и перейти к норме на $\mathbb{R}^n$.
 	
-	$$ \underset{\mathbb{R}^n}{\int} \leq \norm{f}^2_{\mathbb{L}_2} \cdot \norm{k}^2_{\mathbb{L}_2} $$
+	$$ \Int{\mathbb{R}^n}{} \norm{(Af)(t)}^2 \, dt \leq \norm{f}^2_{\mathbb{L}_2} \cdot \norm{k}^2_{\mathbb{L}_2} $$
 \end{document}
