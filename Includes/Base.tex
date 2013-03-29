@@ -1,0 +1,61 @@
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{xcolor}
+
+\usepackage{indentfirst}
+
+%\usepackage{marginnote} % this is used for notes on the right margin --- \marginnote{\footnotesize txt}
+
+\usepackage{mathtools} % for mathclap command
+
+%\usepackage[normalem]{ulem} % for crossing text out - \sout
+
+% Redefining \def is impossible. I tried, but it is impossible.
+%\let\def_prev\def
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           MATH OPERATORS SPACING            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\let\existstemp\exists
+\let\foralltemp\forall
+\renewcommand{\exists}{\: \existstemp \:}
+\newcommand{\existsonly}{\: \existstemp ! \:}
+\renewcommand{\forall}{\: \foralltemp \:}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            COMMAND SHORTHANDS               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\example}{{\itshape Пример. }}
+\newcommand{\equals}{\Leftrightarrow}
+\newcommand{\exc}{{\bfseries Упражнение. }}
+\newcommand{\norm}[1]{\| #1 \|}
+\newcommand{\scal}[2]{\, \langle #1, #2 \rangle \,}
+\newcommand{\angular}[1]{\langle #1 \rangle}
+
+\newcommand{\Sum}[2]{\underset{#1}{\overset{#2}{\sum}}}
+\newcommand{\Int}[2]{\underset{#1}{\overset{#2}{\int}}}
+\newcommand{\Ker}{\text{Ker}}
+
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%         THEOREM DEFINITION LINES            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{lem}{Лемма}[section]
+\newtheorem{defi}{Определение}[section]
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{state}{Утверждение}[section] % statement
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%             GRAPHICS INCLUSION              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{graphicx}
