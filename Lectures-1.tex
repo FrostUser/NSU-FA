@@ -1,35 +1,8 @@
 \documentclass[12pt]{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage[russian]{babel}
+\include{Includes/Base}
 
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{xcolor}
-
-\usepackage{indentfirst}
-
-\usepackage[normalem]{ulem} % for crossing text out - \sout
-
-% Redefining \def is impossible. I tried, but it is impossible.
-%\let\def_prev\def
-
-\newcommand{\example}{{\itshape Пример. }}
-\newcommand{\equals}{\Leftrightarrow}
-%\newcommand{\defi}{{\itshape Определение. }}
-\newcommand{\exc}{{\bfseries Упражнение. }}
-
-\renewcommand{\leq}{\leqslant}
-\renewcommand{\geq}{\geqslant}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%         THEOREM DEFINITION LINES            %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\newtheorem{lem}{Лемма}[section]
-\newtheorem{defi}{Определение}[section]
-\newtheorem{theorem}{Теорема}[section]
-\newtheorem{state}{Утверждение}[section] % statement
+\usepackage{ulem}
 
 \begin{document}
 	\title{Основы функционального анализа, второй семестр.}
@@ -97,7 +70,13 @@
 	\end{defi}
 	
 	\example Рассмотрим дискретное метрическое пространство:
-	$$\rho = \{^{1, x \neq y}_{0, x = y}$$
+	$$
+		\rho = 
+		\begin{cases}
+			1, x \neq y \\
+			0, x = y
+		\end{cases}
+	$$
 	Любое подмножество, содержащееся в пространстве с такой метрикой является открытым: каждая точка содержит окрестность радиуса 
 	$\frac{1}{2}$.
 	

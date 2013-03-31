@@ -1,52 +1,6 @@
 \documentclass[12pt]{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage[russian]{babel}
-
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{xcolor}
-
-\usepackage{indentfirst}
-
-%\usepackage[normalem]{ulem} % for crossing text out - \sout
-
-% Redefining \def is impossible. I tried, but it is impossible.
-%\let\def_prev\def
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%           MATH OPERATORS SPACING            %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\let\existstemp\exists
-\let\foralltemp\forall
-\renewcommand{\exists}{\: \existstemp \:}
-\newcommand{\existsonly}{\: \existstemp ! \:}
-\renewcommand{\forall}{\: \foralltemp \:}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%            COMMAND SHORTHANDS               %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\newcommand{\example}{{\itshape Пример. }}
-\newcommand{\equals}{\Leftrightarrow}
-%\newcommand{\defi}{{\itshape Определение. }}
-\newcommand{\exc}{{\bfseries Упражнение. }}
-\newcommand{\norm}[1]{\| #1 \|}
-\newcommand{\scal}[2]{\, < \!\! #1, #2 \!\! > \,}
-
-\renewcommand{\leq}{\leqslant}
-\renewcommand{\geq}{\geqslant}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%         THEOREM DEFINITION LINES            %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\newtheorem{lem}{Лемма}[section]
-\newtheorem{defi}{Определение}[section]
-\newtheorem{theorem}{Теорема}[section] % statement
-\newtheorem{state}{Утверждение}[section] % statement
+\include{Includes/Base}
 
 \setcounter{section}{3}
 
