@@ -1,25 +1,14 @@
-\documentclass[12pt]{article}
-
-\include{Includes/Base}
-
-\setcounter{section}{1}
-
-\begin{document}
-	\title{Основы функционального анализа, второй семестр.}
-	\author{Тресков Сергей Андреевич}
-	\maketitle
-	
 	\section{Лекция}
 	
     Пора доказать <<контрабанду>>, введённую в прошлом разделе. Докажем, что норма, введённая на основе скалярного произведения, 
-    $$\| x \| = \sqrt{<x,x>}$$
+    $$\| x \| = \sqrt{\scal{x}{x}}$$
     соответствует всем ранее указанным аксиомам.
 
     \begin{enumerate}
     \item Очевидно из первого свойства скалярного произведения.
-    \item $\norm{\lambda x}^2 = \lambda \bar{\lambda} <x, x> = | \lambda |^2 \cdot \norm{x}^2$
+    \item $\norm{\lambda x}^2 = \lambda \bar{\lambda} \scal{x}{x} = | \lambda |^2 \cdot \norm{x}^2$
     \item $\norm{x+y} \overset{?}{\leq} \norm{x} + \norm{y}$
-	      $$\norm{x + y}^2 = \norm{x}^2 + <x,y> + <y,x> + \norm{y}^2 \leq \norm{x}^2 + 2 \norm{x} \norm{y} + \norm{y}^2
+	      $$\norm{x + y}^2 = \norm{x}^2 + \scal{x}{y} + \scal{y}{x} + \norm{y}^2 \leq \norm{x}^2 + 2 \norm{x} \norm{y} + \norm{y}^2
 			= (\norm{x} + \norm{y})^2
 	      $$
     \end{enumerate}
@@ -33,7 +22,7 @@
 	В доказательстве последующей теоремы потребуется данное утверждение:
 	\begin{state}
 		Скалярное произведение непрерывно по первому и второму аргументам.
-		$$<x, y> - <x', y'> = <x, y> - <x', y> + <x', y> - <x', y'> \leq$$
+		$$\scal{x}{y} - \scal{x}{y} = \scal{x}{y} - \scal{x}{y} + \scal{x}{y} - \scal{x}{y} \leq$$
 		$$\leq \norm{x - x'}\cdot \norm{y} + \norm{x'} \cdot \norm{y - y'}$$
 	\end{state}
 	
@@ -67,13 +56,13 @@
 	Мы можем выделить ближайший вектор, так как подпространство обязательно является выпуклым. {\color{gray} Деваться больше некуда.}
 	\begin{proof}
 		Предположим, что это не так:
-		$$<f, g_1> = \alpha \neq 0$$
+		$$\scal{f}{g_1} = \alpha \neq 0$$
 		Рассмотрим вектор:
-		$$g^* = g + \frac{<f, g_1>}{\norm{g1}^2} \cdot g_1 = $$
+		$$g^* = g + \frac{\scal{f}{g_1}}{\norm{g1}^2} \cdot g_1 = $$
 		$$ = g + \frac{\alpha}{\norm{g_1}^2} \cdot g_1$$
 		Используя этот вспомогательный вектор, докажем ортогональность:
-		$$\norm{h - g^*}^2 = <h - g - \frac{\alpha}{\norm{g_1}^2} \cdot g_1, \underset{То же самое}{...}> = $$
-		$$ = \norm{h - g}^2 - <h - g, \frac{\alpha}{\norm{g_1}^2} g_1> - <\frac{\alpha}{\norm{g_1}^2} g_1, h - g> + 
+		$$\norm{h - g^*}^2 = \scal{h - g - \frac{\alpha}{\norm{g_1}^2} \cdot g_1}{\underset{То же самое}{...}} = $$
+		$$ = \norm{h - g}^2 - \scal{h - g}{\frac{\alpha}{\norm{g_1}^2} g_1} - \scal{\frac{\alpha}{\norm{g_1}^2} g_1}{h - g} + 
 		\frac{|\alpha|^2}{\norm{g_1}^2} g_1 = $$
 		$$ = \norm{h - g}^2 - \frac{|\alpha|^2}{\norm{g_1}^2} - \frac{|\alpha|^2}{\norm{g_1}^2} + \frac{|\alpha|^2}{\norm{g_1}^2} = $$
 		$$ = \norm{h - g}^2 - \frac{|\alpha|^2}{\norm{g_1}^2}$$
@@ -91,13 +80,13 @@
     $$
         \left.
         \begin{aligned}
-            <f_n, e_i> = <h, e_i> - <g_n, e_i> \\
-            <f_n, e_i> = 0
+            \scal{f_n}{e_i} = \scal{h}{e_i} - \scal{g_n}{e_i} \\
+            \scal{f_n}{e_i} = 0
         \end{aligned}
-        \right\} \Rightarrow \alpha_i = <g_n, e_i> = <h, e_i>
+        \right\} \Rightarrow \alpha_i = \scal{g_n}{e_i} = \scal{h}{e_i}
     $$
 
-	Для $h = g + f$, (так как $<g,f> = 0$)
+	Для $h = g + f$, (так как $\scal{g}{f} = 0$)
 	$$ \norm{h}^2 = \norm{g_n}^2 + \norm{f_n}^2 = \sum_1^n |\alpha_i|^2 + \norm{f_n}^2$$
 	Имеет смысл рассмотреть такую величину в гильбертовом пространстве: $h = \sum_1^n \alpha_i e_i, \alpha_i = <h e+i>$ -
 	\textbf{ряд Фурье} вектора h.
@@ -129,4 +118,3 @@
 	\end{proof}
 	
 	{\huge НЯ!}
-\end{document}

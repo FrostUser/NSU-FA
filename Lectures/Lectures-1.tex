@@ -1,14 +1,3 @@
-\documentclass[12pt]{article}
-
-\include{Includes/Base}
-
-\usepackage{ulem}
-
-\begin{document}
-	\title{Основы функционального анализа, второй семестр.}
-	\author{Тресков Сергей Андреевич}
-	\maketitle
-	
 	\section{Векторные пространства}
 	
 	\begin{defi} 
@@ -60,7 +49,7 @@
 		\textbf{Пределом} функции $f : M_1 \rightarrow M_2$ называется $y \in M_2$, такой что 
 		$$\forall \varepsilon > 0 ~\exists 
 		\delta(\varepsilon) > 0, \forall x \in M_1 ~\&~ x  \neq x_0 : $$
-		$$\rho_1(x, x_0) < \delta \Rightarrow \rho_2(f(x), y) > \varepsilon$$
+		$$\rho_1(x, x_0) < \delta \Rightarrow \rho_2(f(x), y) < \varepsilon$$
 	\end{defi}
 	
 	Обозначение: $lim_{x \rightarrow x_0} f(x) = y$
@@ -160,32 +149,32 @@
 	Значительное внимание в курсе уделено пространствами со скалярным произведением.
 
 	\begin{defi}
-		Cкалярное произведение -- это отображение $<.,.> : E^2 \rightarrow C$, удовлетворяющее следующим свойствам:
+		Cкалярное произведение -- это отображение $\scal{.}{.} : E^2 \rightarrow C$, удовлетворяющее следующим свойствам:
 		\begin{enumerate} 
-			\item $<x,y> = \overline{<y,x>}$
-			\item $<\alpha x_1 + \beta x_2, y> ~= ~\alpha <x_1, y> + \beta <x+2, y>$
-			\item $<x, x> ~\geq ~0 ~(<x, x> = 0 \equals x = 0)$
+			\item $\scal{x}{y} = \overline{\scal{y}{x}}$
+			\item $\scal{\alpha x_1 + \beta x_2}{y} ~= ~\alpha \scal{x_1}{y} + \beta \scal{x+2}{y}$
+			\item $\scal{x}{x} ~\geq ~0 ~(\scal{x}{x} = 0 \equals x = 0)$
 		\end{enumerate}
 	\end{defi}
 
 	\begin{defi}
-		$\|x\| = \sqrt{<x, x>}$ {\color{gray} Пока это <<контрабандное>> утверждение, докажем его позже.}
+		$\|x\| = \sqrt{\scal{x}{x}}$ {\color{gray} Пока это <<контрабандное>> утверждение, докажем его позже.}
 	\end{defi}
 	
 	\exc Доказать тождество параллелограмма: 
 	$$\|x+y\|^2 + \|x-y\|^2 = 2 \|x\|^2 + 2 \|y\|^2$$
 	Так как пространство $l_2$ -- бесконечномерное пространство, для него потребуется доказать неравенство Шварца (оно же неравенство
 	Коши-Буняковского):
-	$$|<x, y>| \leq \|x\| \cdot \|y\|$$
+	$$|\scal{x}{y}| \leq \|x\| \cdot \|y\|$$
 	Введём две вспомогательные переменные:
-	$$\theta = \frac{<x, y>}{|<x, y>|}, t \in \mathbb{R}$$
+	$$\theta = \frac{\scal{x}{y}}{|\scal{x}{y}|}, t \in \mathbb{R}$$
 	
-	$$0 \leq \|\bar{\theta} x + t y\|^2 ~=~ <\bar{\theta} x + t y, \bar{\theta} x + t y> ~= $$
-	$$\bar{\theta} <x, \bar{\theta} x + t y> ~+~ t <y, \bar{\theta} x + t y> ~= $$
-	$$|\theta|^2 \|x\|^2 ~+~ t \bar{\theta} <x, y> ~+~ t \theta <y, x> ~+~ t^2 \|y\|^2 ~= $$
-	$$t^2 \|y\|^2 + 2t |<x,y>| + \|x\|^2$$
+	$$0 \leq \|\bar{\theta} x + t y\|^2 ~=~ \scal{\bar{\theta} x + t y}{\bar{\theta} x + t y} ~= $$
+	$$\bar{\theta} \scal{x}{\bar{\theta} x + t y} ~+~ t \scal{y}{\bar{\theta} x + t y} ~= $$
+	$$|\theta|^2 \|x\|^2 ~+~ t \bar{\theta} \scal{x}{y} ~+~ t \theta \scal{y}{x} ~+~ t^2 \|y\|^2 ~= $$
+	$$t^2 \|y\|^2 + 2t |\scal{x}{y}| + \|x\|^2$$
 	Дискриминант должен быть не положительным. Таким образом, получаем:
-	$$|<x, y>|^2 \leq \|x\|^2 \|y\|^2$$
+	$$|\scal{x}{y}|^2 \leq \|x\|^2 \|y\|^2$$
 	Взяв квадратный корень от обеих частей выражения, получим искомое неравенство.
 	
 	\begin{defi}
@@ -197,4 +186,3 @@
 	\begin{defi}
 		$x \in l_2$, $\|x\| = (\sum{|x_i|^2})^{1/2}$ 
 	\end{defi}
-\end{document}
