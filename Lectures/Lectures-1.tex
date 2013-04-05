@@ -46,7 +46,7 @@
 	определение, а второе остаётся в качестве упражнения:
 	
 	\begin{defi}
-		\textbf{Пределом} функции $f : M_1 \rightarrow M_2$ называется $y \in M_2$, такой что 
+		\textbf{Пределом} функции $f : M_1 \rightarrow M_2$ называется $y~\in~M_2$, такой что 
 		$$\forall \varepsilon > 0 ~\exists 
 		\delta(\varepsilon) > 0, \forall x \in M_1 ~\&~ x  \neq x_0 : $$
 		$$\rho_1(x, x_0) < \delta \Rightarrow \rho_2(f(x), y) < \varepsilon$$
@@ -74,7 +74,7 @@
 	\end{defi}
 	
 	\begin{defi}
-		\textbf{Замыкание} множества -- это объединение множества и всех его предельных точек. Обозначают $\bar{M}$ или $cl ~ M$.
+		\textbf{Замыкание} множества -- это объединение множества и всех его предельных точек. Обозначают $\overline{M}$ или $cl ~ M$.
 	\end{defi}
 	
 	\exc Доказать, что замыкание множества является замкнутым.
@@ -82,13 +82,14 @@
 	\exc Доказать, что дополнение к открытому множеству замкнуто, а к замкнутому открыто.
 	
 	\begin{defi}
-		$M_1 \subset M$, $M_2 \subset M$. Подмножество $M_1$ \textbf{плотно} в $M_2 \equals M_2 \subset \bar{M}_1$
+		$M_1 \subset M$, $M_2 \subset M$. Подмножество $M_1$ \textbf{плотно} в $M_2 \equals M_2 \subset \overline{M}_1$
 	\end{defi}
 	
 	\example Множество рациональных чисел плотно в множестве иррациональных.
 	
 	\begin{defi}
-		Пусть $M_1 \subset M$. $M_1$ \textbf{всюду плотно} $\equals$ $\bar{M}_1 = M$. (То есть для любой точки из M существует 
+		Пусть $M_1 \subset M$. $M_1$ \textbf{всюду плотно} $\equals$ $\
+		{M}_1 = M$. (То есть для любой точки из M существует 
 		последовательность из $M_1$, которая сходится к этой точке.)
 	\end{defi}
 	
@@ -169,7 +170,8 @@
 	Введём две вспомогательные переменные:
 	$$\theta = \frac{\scal{x}{y}}{|\scal{x}{y}|}, t \in \mathbb{R}$$
 	
-	$$0 \leq \|\bar{\theta} x + t y\|^2 ~=~ \scal{\bar{\theta} x + t y}{\bar{\theta} x + t y} ~= $$
+	$$0 \leq \|\
+	{\theta} x + t y\|^2 ~=~ \scal{\bar{\theta} x + t y}{\bar{\theta} x + t y} ~= $$
 	$$\bar{\theta} \scal{x}{\bar{\theta} x + t y} ~+~ t \scal{y}{\bar{\theta} x + t y} ~= $$
 	$$|\theta|^2 \|x\|^2 ~+~ t \bar{\theta} \scal{x}{y} ~+~ t \theta \scal{y}{x} ~+~ t^2 \|y\|^2 ~= $$
 	$$t^2 \|y\|^2 + 2t |\scal{x}{y}| + \|x\|^2$$
