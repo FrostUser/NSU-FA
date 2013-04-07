@@ -2,6 +2,8 @@
 
 \input{./../Includes/Base}
 
+\usepackage{amscd}
+
 \begin{document}
 	\section{Лекция}
 	
@@ -11,7 +13,6 @@
 		Здесь следует повторная формулировка теоремы Рисса.
 	}
 	
-	% Коряво, стоит потом глянуть в литературе.
 	Пусть существует функционал $f \in H_2'$. Тогда, по теореме Рисса, ему соответствует вектор $h_f \in H_2$, такой, что 
 	$$\forall h \in H_2, \: f(h) = \scal{h}{h_f}$$
 	Определим линейный оператор $A : H_1 \rightarrow H_2$. Для $x \in H_1$: 
@@ -20,8 +21,212 @@
 	$$f(Ax) = g(x) = \scal{x}{h_g}$$
 	И векторы $h_f$ и $h_g$ будут связаны соотношением:
 	$$h_g = A^{*}h_f$$
+	Таким образом, вводится понятие \textbf{сопряжённого оператора}.
+
+	% Коряво, стоит потом глянуть в литературе.
+	Теорема Рисса также приводит нас к доказательству ещё одного важного свойства:
+	\begin{state}
+		%Пусть функционал $f_1: L \rightarrow \mathbb{C}$ линеен, ограничен и его область определения $D(f_1) = L$,
+		%причём $L \neq H$ --- всему гильбертову пространству. Тогда найдётся линейный ограниченный функционал 
+		%$f: H \rightarrow \mathbb{C}$, определённый на всём пространстве и $f|_{L} = f_1$.
+		Пусть функционал $f$ линеен и ограничен. Если область определения этого функционала $D(f) \subset H$, 
+		где $H$ --- гильбертово пространство, то функционал $f$ можно расширить на всё пространство $H$.
+	\end{state}
+	\todo{Найти эту теорему в прошлых конспектах и отослаться на неё.}
+	\begin{proof}
+		Ранее было доказано, что линейный ограниченный оператор можно продолжить на замыкание его области определения 
+		(Теорема ??). Тогда, даже если $\overline{D(f)} \neq H$, всё равно $\overline{D(f)}$ --- гильбертово пространство.
+		А это значит, что, по теореме Рисса, мы можем сопоставить ему вектор $h_f \in \overline{D(f)} \subset H$, такой, что 
+		$f(h) = \scal{h}{h_f}$. Но, так как $h_f \in H$, то $\scal{h}{h_f}$ определено на всём пространстве $H$. \\
+	\end{proof}
+	
+	Благодаря этому утверждению, в дальнейшем функционалы можно считать определёнными на всём гильбертовом пространстве.
+	
+	\subsubsection{Свойства линейного оператора}
+	
+	\begin{enumerate}
+		\item Линейность
+		\begin{align*}
+			\underline{ \scal{h_1}{A^{*}\angular{\alpha h + \beta g}} } &= \scal{Ah_1}{\alpha h + \beta g} = 
+			\bar{\alpha}\scal{Ah_1}{h} \bar{\beta}\scal{Ah_1}{g} = \\
+			&= \scal{h_1}{\alpha A^{*} h} + \scal{h_1}{\beta A^{*} g} = 
+			\underline{ \scal{h_1}{\alpha A^{*} h + \beta A^{*} g} }
+		\end{align*}
+		Так как подчёркнутые выражения равны для любых $h_1$, будет выполнено равенство
+		$$A^{*}\angular{\alpha h + \beta g} = \alpha A^{*} h + \beta A^{*} g$$
+		
+		\item Ограниченность \label{bounded}
+		
+		Рассмотрим скалярное произведение $\scal{h}{A^{*}g}$: 
+		$$\scal{h}{A^{*}g} = \scal{Ah}{g} \leq \norm{Ah}\cdot\norm{g} \leq \norm{A}\cdot\norm{h}\cdot\norm{g}$$
+		Теперь, поставим $h = A^{*}g$:
+		\begin{gather*}
+			\norm{A^{*}g}^2 \leq \norm{A}\cdot\norm{A^{*}g}\cdot\norm{g} \\
+			\norm{A^{*}g} \leq \norm{A}\cdot\norm{g} \\
+			\dfrac{\norm{A^{*}g}}{\norm{g}} \leq \norm{A}
+		\end{gather*}
+		Вспомним определение нормы оператора: $\norm{A^{*}} = \underset{g \neq 0}{\sup} \frac{\norm{A^{*}g}}{\norm{g}}$. Тогда очевидно
+		$\norm{A^{*}} \leq \norm{A}$.
+		
+		\item $(\alpha A + \beta B)^{*} = (\bar{\alpha}A^{*} + \bar{\beta}B^{*})$ \label{conjlin}
+		\begin{align*}
+			\scal{(\alpha A + \beta B)h}{g} &= \scal{h}{(\alpha A + \beta B)^{*}g} \\
+			\scal{(\alpha A + \beta B)h}{g} &= \alpha\scal{Ah}{g} + \beta\scal{Bh}{g} 
+			= \alpha\scal{h}{A^{*}g} + \beta \scal{h}{B^{*}g} = \\
+			&= \scal{h}{(\bar{\alpha}A^{*} + \bar{\beta}B^{*})g}
+		\end{align*}
+		Таким образом, $\forall h\: \scal{h}{(\alpha A + \beta B)^{*}g} = \scal{h}{(\bar{\alpha}A^{*} + \bar{\beta}B^{*})g}$, 
+		следовательно $(\alpha A + \beta B)^{*} = (\bar{\alpha}A^{*} + \bar{\beta}B^{*})$ \\
+		
+		\item $(BA)^{*} = A^{*}B^{*}$
+		\todo{Использовать \textbf{tikz-cd}, в нём лучше такие вещи делать.}
+		$$
+		\begin{CD}
+			\scal{BAh}{g} @. = @. \scal{h}{(BA^{*})g} \\
+				@| \\
+			\scal{Ah}{B^{*}g} @. = @. \scal{h}{A^{*}B^{*}g}
+		\end{CD}
+		$$
+		
+		Отсюда $\scal{h}{A^{*}B^{*}g} = \scal{h}{(BA^{*})g}$ и $(BA^{*}) = A^{*}B^{*}$.
+		
+		{\Large(}Это свойство доказывает $(A^n)^{*} = (A^{*})^n,\, n \in \mathbb{N}$. ($B=A^{n-1}$){\Large)} \\
+		
+		\item $I^{*} = I$
+		$$
+		\left.
+		\begin{CD}
+			\scal{Ih}{g} @. = @. \scal{h}{I^{*}g} \\
+				@| \\
+			\scal{h}{g} @. = @. \scal{h}{Ig}
+		\end{CD}
+		\right\} \Rightarrow I = I^{*}
+		$$
+		
+		\item $(A^{*})^{*} = A$ \label{doubleconj}
+		
+		Для оператора $A: H_1 \rightarrow H_2$, рассмотрим $h \in H_1$, $g \in H_2$:
+		$$
+			\scal{g}{(A^{*})^{*}h} = \scal{A^{*}g}{h} = \overline{\scal{h}{A^{*}g}} = 
+			\overline{\scal{Ah}{g}} = \scal{g}{Ah}
+		$$
+		Таким образом, $\forall g,h \: \scal{g}{(A^{*})^{*}h} = \scal{g}{Ah} \Rightarrow (A^{*})^{*} = A$
+		
+		\item $\norm{A} = \norm{A^{*}}$
+		
+		Очевидно по свойствам (\ref{bounded}) и (\ref{doubleconj}):
+		
+		$$
+		\left.
+		\begin{aligned}
+			\norm{A^{*}} &\leq \norm{A} \\
+			\norm{A} &\leq \norm{A^{*}}
+		\end{aligned}
+		\right\}
+		\Rightarrow \norm{A} = \norm{A^{*}}
+		$$
+		
+		\item Если матрица $A$ обратима, то $(A^{-1})^{*} = (A^{*})^{-1}$.
+		
+		\exc Доказать это свойство. \\
+		{\Large(}Это также автоматически докажет $(A^n)^{*} = (A^{*})^n,\, n \in \mathbb{Z}${\Large)}
+	\end{enumerate}
+	
+	\subsubsection{Самосопряжённый оператор}
+	
+	\begin{defi}
+		Оператор $A : H \rightarrow H$ называется \textbf{самосопряжённым}, если $forall h,\, g \in H$ выполнено выражение
+		$$scal{Ah}{g} = \scal{h}{Ag}$$
+	\end{defi}
+	
+	\example Если $\exists H_1 \subset H$, то любой вектор $h$ представим как $h = g+f$, $g \in H_1$, $f\perp H_1$.
+	Рассмотрим оператор проецирования на $H_1$ --- $P_{H_1}h = g$. Тогда выполнены следующие равенства:
+	$$\scal{P_{H_1}h_1}{h_2} = \scal{h_1}{h_2} = \scal{g_1}{g_2} = \scal{g_1}{P_{H_1}h_2} = \scal{h_1}{P_{H_1}h_2}$$
+	Из этой последоватльности равенств следует самосопряжённость оператора $P_{H_1}$.
+	
+	Для самосопряжённых операторов $A : H \rightarrow H$, $B : H \rightarrow H$ и чисел $\alpha,\, \beta \in \mathbb{R}$ верны следующие
+	свойства:
+	\begin{enumerate}
+		\item $\alpha A + \beta B$ --- самосопряжённый оператор.
+
+		Очевидно из свойства (\ref{conjlin}) сопряжённого оператора.
+		
+		\item $AB = BA$ $\Rightarrow$ $AB$ --- самосопряжённый оператор.
+		
+		\todo{А почему тогда только стрелка вправо?}
+
+		На самом деле, два этих утверждения равносильны.
+		
+		\item $\dfrac{AB - BA}{i}$ --- самосопряжённый.
+		
+		{\color{gray}
+		Доказано на семинаре.
+		}
+	\end{enumerate}
+	Также, для любого ограниченного оператора $A: H \rightarrow H$ верно:
+	\begin{enumerate}
+		\item[4.] $A+A^{*}$ --- самосопряжённый
+		\item[5.] $i(A-A^{*})$ --- самосопряжённый
+	\end{enumerate}
+	
+	\subsubsection{Собственные значения самосопряжённого оператора}
 	
 	\begin{state}
-		%Пусть функционал линеен 
+		Собственные значения для самосопряжённого оператора обязательно вещественны.
 	\end{state}
+	\begin{proof}
+		Рассмотрим собственное значение $\lambda$ и соответствующий ему собственный вектор $e_{\lambda}$:
+		\begin{gather*}
+			Ae_{\lambda} = \lambda e_{\lambda} \\
+			\begin{CD}
+				\scal{Ae_{\lambda}}{e_{\lambda}} @.=@. \scal{\lambda e_{\lambda}}{e_{\lambda}} = \lambda \norm{e_{\lambda}}^2 \\
+				@| \\
+				\scal{e_{\lambda}}{Ae_{\lambda}} @.=@. \scal{e_{\lambda}}{\lambda e_{\lambda}} = \bar{\lambda} \norm{e_{\lambda}}^2 
+			\end{CD}
+		\end{gather*}
+		Так как $\norm{e_{\lambda}} \neq 0$, то $\lambda = \bar{\lambda}$.
+	\end{proof}
+	\exc Доказать, что для $A = A^{*}$ весь его спектр $\sigma(A) \subset \mathbb{R}$.
+	
+	\begin{note}
+		Собственные вектора самосопряжённого оператора, соответствующие разным собственным значениям, ортогональны.
+	\end{note}
+	\begin{proof} % или не было.
+		Возьмём $\lambda \neq \mu$, причём $\lambda,\, \mu \in \sigma_d(A)$.
+		$$
+			\begin{CD}
+				\scal{Ae_{\lambda}}{e_{\mu}} @.=@. \lambda\scal{e_{\lambda}}{e_{\mu}} \\
+				@| \\
+				\scal{e_{\lambda}}{Ae_{\mu}} @.=@. \scal{e_{\lambda}}{\mu e_{\mu}} @.=@. \mu\scal{e_{\lambda}}{e_{\mu}}
+			\end{CD}
+		$$
+		Так как $\lambda \neq \mu$, то $\scal{e_{\lambda}}{e_{\mu}} = 0$.
+	\end{proof}
+	
+	\subsubsection{Квадратичная форма оператора}
+	\begin{defi}
+		Выражение вида $\scal{Ah}{h}$ называется \textbf{квадратичной формой оператора}.
+	\end{defi}
+	
+	\begin{state}
+		$$\scal{Ah}{h} = \scal{h}{Ah} = \overline{\scal{Ah}{h}}$$
+		Отсюда естественным образом следует $\scal{Ah}{h} \in \mathbb{R}$.
+	\end{state}
+	
+	Стоит также отметить, что $|\scal{Ah}{h}| \leq \norm{A} \cdot \norm{h}^2$ по неравенству Шварца.
+	
+	Далее в доказательствах будут использоваться два числа:
+	$$
+		%\left\{
+		\begin{aligned}
+			m &= \underset{\norm{x} = 1}{\inf} \scal{Ax}{x} \\
+			M &= \underset{\norm{x} = 1}{\sup} \scal{Ax}{x}
+		\end{aligned}
+		%\right.
+	$$
+	
+	\begin{state}
+		Если $A$ --- самосопряжённый оператор, то $\norm{A} = \max(|m|, |M|)$. (Норма оператора $A$ равняется супремуму)
+	\end{state}
+	
 \end{document}
