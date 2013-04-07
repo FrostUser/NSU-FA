@@ -171,7 +171,7 @@
 	
 	\subsubsection{Собственные значения самосопряжённого оператора}
 	
-	\begin{state}
+	\begin{state} \label{st:realeigenvalues}
 		Собственные значения для самосопряжённого оператора обязательно вещественны.
 	\end{state}
 	\begin{proof}
@@ -226,7 +226,112 @@
 	$$
 	
 	\begin{state}
-		Если $A$ --- самосопряжённый оператор, то $\norm{A} = \max(|m|, |M|)$. (Норма оператора $A$ равняется супремуму)
+		Если $A$ --- самосопряжённый оператор, то $\norm{A} = \max(|m|, |M|)$. 
+		(Норма оператора $A$ равняется супремуму модуля скалярного призведения на единичной сфере)
 	\end{state}
+	\begin{proof}
+		Введём 
+		$$C = \max(|m|, |M|) = \underset{\norm{x} = 1}{\sup} |\!\scal{Ax}{x}\!|$$
+		Из неравенства Шварца, $C \leq \norm{A} \cdot (1)^2 = \norm{A}$.
+		Введём вектор $z \neq 0$ и обозначим соответствующие ему параметры ($\lambda$ --- число, $u$ --вектор):
+		\begin{gather*}
+			\lambda = \left(\frac{\norm{Az}}{\norm{z}}\right)^{\tfrac{1}{2}} \\
+			u = \frac{1}{\lambda}(Az)
+		\end{gather*}
+		
+		Рассмотрим $\norm{Az}^2$:
+		\begin{equation} \label{eq:scalprod}
+			\norm{Az}^2 = {\color{gray} \lambda\lambda^{-1}} \scal{Az}{Az} = \scal{A \lambda z}{u}
+		\end{equation}
+		
+		Проведём некоторые промежуточные вычисления:
+		\begin{equation*}
+		\begin{split}
+			\scal{A(\lambda z + u)}{&\lambda z + u} - \scal{A(\lambda z - u)}{\lambda z - u} = \\
+			  = &{\color{red}\scal{A \lambda z}{\lambda z}} + \scal{A\lambda z}{u} + \scal{Au}{\lambda z} + {\color{blue}\scal{Au}{u}} \\
+			  - &{\color{red}\scal{A \lambda z}{\lambda z}} + \scal{A\lambda z}{u} + \scal{Au}{\lambda z} - {\color{blue}\scal{Au}{u}}
+		\end{split}
+		\end{equation*}
+		
+		\todo{В другом учебнике в итоге оставалась только Re от результата}
+		Выделенные одинаковыми цветами слагаемые уходят. Тогда, учитывая $A~=~A^{*}$ и 
+		$\scal{Au}{\lambda z} = \scal{A\lambda z}{u}$, получим:
+		\begin{equation} \label{eq:scalproddiff}
+		\begin{split}
+			\scal{A(\lambda z + u)}{\lambda z + u} - &\scal{A(\lambda z + u)}{\lambda z - u} = \\
+			 &= 2 \cdot \left(\scal{A\lambda z}{u} + \scal{Au}{\lambda z}\right) = \\
+			 &= 4 \cdot \scal{A\lambda z}{u}
+		\end{split}
+		\end{equation}
+		
+		Вернёмся к выражению \ref{eq:scalprod}:
+		\begin{equation*}
+		\begin{split}
+			\scal{A\lambda z}{u} 
+			&= \frac{1}{4} (\scal{A(\lambda z + u)}{\lambda z + u} - \scal{A(\lambda z - u)}{\lambda z - u}) \leq \\
+			&\leq \underbrace{\frac{C}{4} \left( \norm{\lambda z + u}^2 + \norm{\lambda z - u}^2 \right)}_{\text{<<Кусок>> тождества 
+			параллелограмма}} = \frac{C}{2} \left(\lambda \norm{z}^2 + \norm{u}^2\right) = \\
+			&= \frac{C}{2} \left(\norm{Az}\cdot\norm{z} + \norm{Az}\cdot\norm{z}\right) = C\cdot\norm{Az}\cdot\norm{z}
+		\end{split}
+		\end{equation*}
+		Возвращаясь к началу этой цепочки равенств и неравенств, видно:
+		\begin{align*}	
+			\norm{Az}^2 &\leq C\cdot\norm{Az}\cdot\norm{z} \\
+			\norm{A} &\leq C
+		\end{align*}
+	\end{proof}
 	
+	\begin{theorem}
+		(О регулярных значениях самосопряжённого оператора) Пусть $A: H \rightarrow H$ --- линейный оператор, 
+		$A_{\lambda} = A - \lambda I$. Тогда верно следующее:
+		$$\lambda \in r_{A}(z) \Leftrightarrow \exists C > 0,\, \forall x \in H,\, \norm{A_{\lambda}x} \geq C\cdot\norm{x}$$
+	\end{theorem}
+	\begin{proof}
+		\todo{Плохо понимаю свои записи. Возможны ошибки в доказательстве.}
+		\textbf{Достаточность}: 
+		Если $\lambda$ --- регулярное значение, то обратный оператор ограничен:
+		$$
+		\begin{CD}
+			\norm{A_{\lambda}^{-1}y} @.\leq m\cdot\norm{y} \\
+			\parallel \\		
+			\norm{x} @.\leq m\cdot\norm{y},\,
+		\end{CD}
+		$$
+		%{\color{gray}\left(m = \underset{y\neq0}{\sup}\dfrac{\norm{x}}{\norm{y}}\right)}
+		
+		С другой стороны, $\norm{A_{\lambda}x} = \norm{y}$, значит
+		$$\norm{A_{\lambda}x} = \norm{y}$$
+		Следовательно, $\norm{A_{\lambda}x}\geq\frac{1}{m}\cdot\norm{x}$ и условия теоремы будут выполнены, если взять
+		$C = \frac{1}{m}$.
+		
+		\textbf{Необходимость}: 
+		По условию теоремы, выполнено следующее неравенство:
+		$$\norm{A_{\lambda}x} \geq C\cdot\norm{x}$$
+		
+		Введём линейное пространство $L = \{ h|h=A_{\lambda}x\}$ Если $\lambda \in r(A)$, то область определения
+		$A_{\lambda}^{-1}$ всюду плотна. Предположим, что это не так. Пусть $L$ не 
+		является всюду плотным пространством $\left(\overline{L}\neq H\right)$.
+		
+		Это будет означать, что ортогональное дополнение к $L$ будет содержать ненулевой вектор:
+		$$x_0 \in L^{\perp} \qquad x_0 \neq 0$$
+		
+		Из ортогональности $x_0$ следует:
+		$$\forall x\in L,\, \scal{x_0}{Ax - \lambda x} = 0$$
+		Преобразуем данное уравнение:
+		\begin{gather*}
+			\scal{x_0}{Ax - \lambda x} = 0 \\
+			\scal{Ax_0 - \bar{\lambda} x_0}{x} = 0 \\
+		\end{gather*}
+		Это значит, что $x_0$ --- собственный вектор оператора $A$, с соответствующим ему собственным значением $\bar{\lambda}$.
+		К тому же, для самосопряжённого оператора $A$ выполняется утверждение $\ref{st:realeigenvalues}$, то есть 
+		$\bar{\lambda} = \lambda$. Перепишем скалярное произведение с учётом этого:
+		\begin{gather*}
+			\scal{Ax_0 - \lambda x_0}{x} = 0 \\
+			\scal{A_{\lambda} x_0}{x} = 0
+		\end{gather*}
+		Но по условию теоремы $\norm{A_{\lambda}x_0} \geq C\cdot\norm{x_0}$. Так как скалярное произведение, 
+		написанное выше, равняется нулю $\forall x$, то условие выполнится только при $x_0 = 0$. 
+		
+		Поэтому ортогональное дополнение $L^{\perp} = \{0\}$, что даёт всюду плотную область определения оператора $A_{\lambda}$.
+	\end{proof}
 \end{document}
