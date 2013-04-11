@@ -1,12 +1,3 @@
-\documentclass[12pt]{article}
-
-\input{./../Includes/Base}
-
-\usepackage{amscd}
-
-\begin{document}
-	\section{Лекция}
-	
 	В ходе прошлой лекции была доказана теорема Рисса, дающая представление о том, как выглядит функционал в гильбертовом пространстве.
 	
 	{\color{gray}
@@ -42,7 +33,7 @@
 	
 	Благодаря этому утверждению, в дальнейшем функционалы можно считать определёнными на всём гильбертовом пространстве.
 	
-	\subsubsection{Свойства линейного оператора}
+	\subsubsection{Свойства сопряжённого оператора}
 	
 	\begin{enumerate}
 		\item Линейность
@@ -135,12 +126,12 @@
 	\subsubsection{Самосопряжённый оператор}
 	
 	\begin{defi}
-		Оператор $A : H \rightarrow H$ называется \textbf{самосопряжённым}, если $forall h,\, g \in H$ выполнено выражение
-		$$scal{Ah}{g} = \scal{h}{Ag}$$
+		Оператор $A : H \rightarrow H$ называется \textbf{самосопряжённым}, если $\forall h,\, g \in H$ выполнено выражение
+		$$\scal{Ah}{g} = \scal{h}{Ag}$$
 	\end{defi}
 	
 	\example Если $\exists H_1 \subset H$, то любой вектор $h$ представим как $h = g+f$, $g \in H_1$, $f\perp H_1$.
-	Рассмотрим оператор проецирования на $H_1$ --- $P_{H_1}h = g$. Тогда выполнены следующие равенства:
+	Рассмотрим оператор проецирования на $H_1$: $P_{H_1}h = g$. Тогда выполнены следующие равенства:
 	$$\scal{P_{H_1}h_1}{h_2} = \scal{h_1}{h_2} = \scal{g_1}{g_2} = \scal{g_1}{P_{H_1}h_2} = \scal{h_1}{P_{H_1}h_2}$$
 	Из этой последоватльности равенств следует самосопряжённость оператора $P_{H_1}$.
 	
@@ -247,7 +238,7 @@
 		Проведём некоторые промежуточные вычисления:
 		\begin{equation*}
 		\begin{split}
-			\scal{A(\lambda z + u)}{&\lambda z + u} - \scal{A(\lambda z - u)}{\lambda z - u} = \\
+			\scal{A(\lambda z + u)}{\lambda z + u} - &\scal{A(\lambda z - u)}{\lambda z - u} = \\
 			  = &{\color{red}\scal{A \lambda z}{\lambda z}} + \scal{A\lambda z}{u} + \scal{Au}{\lambda z} + {\color{blue}\scal{Au}{u}} \\
 			  - &{\color{red}\scal{A \lambda z}{\lambda z}} + \scal{A\lambda z}{u} + \scal{Au}{\lambda z} - {\color{blue}\scal{Au}{u}}
 		\end{split}
@@ -268,9 +259,9 @@
 		\begin{equation*}
 		\begin{split}
 			\scal{A\lambda z}{u} 
-			&= \frac{1}{4} (\scal{A(\lambda z + u)}{\lambda z + u} - \scal{A(\lambda z - u)}{\lambda z - u}) \leq \\
+			&= \frac{1}{4} \Big(\!\scal{A(\lambda z + u)}{\lambda z + u} - \scal{A(\lambda z - u)}{\lambda z - u}\!\Big) \leq \\
 			&\leq \underbrace{\frac{C}{4} \left( \norm{\lambda z + u}^2 + \norm{\lambda z - u}^2 \right)}_{\text{<<Кусок>> тождества 
-			параллелограмма}} = \frac{C}{2} \left(\lambda \norm{z}^2 + \norm{u}^2\right) = \\
+			параллелограмма}} = \frac{C}{2} \left(\lambda^2 \norm{z}^2 + \norm{u}^2\right) = \\
 			&= \frac{C}{2} \left(\norm{Az}\cdot\norm{z} + \norm{Az}\cdot\norm{z}\right) = C\cdot\norm{Az}\cdot\norm{z}
 		\end{split}
 		\end{equation*}
@@ -308,7 +299,7 @@
 		По условию теоремы, выполнено следующее неравенство:
 		$$\norm{A_{\lambda}x} \geq C\cdot\norm{x}$$
 		
-		Введём линейное пространство $L = \{ h|h=A_{\lambda}x\}$ Если $\lambda \in r(A)$, то область определения
+		Введём линейное пространство $L = \{ h|h=A_{\lambda}x\}$ Если $\lambda \in r_A$, то область определения
 		$A_{\lambda}^{-1}$ всюду плотна. Предположим, что это не так. Пусть $L$ не 
 		является всюду плотным пространством $\left(\overline{L}\neq H\right)$.
 		
@@ -334,4 +325,27 @@
 		
 		Поэтому ортогональное дополнение $L^{\perp} = \{0\}$, что даёт всюду плотную область определения оператора $A_{\lambda}$.
 	\end{proof}
-\end{document}
+	
+	Доказав условие, равносильное принадлежности $\lambda$ к регулярным значениям, можно инвертировать его и посмотреть,
+	как выглядит спектр самосопряжённого оператора\footnote{Ну хоть одним глазком.} 
+	(ведь $\sigma_A = \mathbb{C} \,\textbackslash\, r_A$).
+	
+	$$\lambda \in \sigma_A \Leftrightarrow \forall C > 0,\, \exists x \in H,\, \norm{A_{\lambda}x} < C\cdot\norm{x}$$
+	
+	Или, разделив обе части неравенства на $\norm{x}$:
+	$$\norm{A_{\lambda} \dfrac{h}{\norm{h}}} < C$$
+	
+	А это будет означать, что найдётся такая последовательность векторов $\{x_n\}$, что:
+	\todo{Нужно ли писать, что $n\rightarrow\infty$?}
+	\todo{Что даёт нам это соотношение?}
+	$$
+		\left.
+		\begin{aligned}
+			\norm{x_n} = 1 \\
+			\norm{A_{\lambda}x_n} \rightarrow 0
+			%\norm{A_{\lambda}x_n} \underset{n \rightarrow \infty}{\rightarrow} 0
+		\end{aligned}
+		\right\}
+		\Leftrightarrow
+		\lambda \in \sigma_A
+	$$
