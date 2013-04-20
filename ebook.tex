@@ -1,32 +1,36 @@
-\documentclass[b5paper, 12pt]{article}
+\documentclass[a5paper, 12pt]{article}
 
 \input{Includes/Base}
 \usepackage{ulem}
-
 \usepackage[cm]{fullpage}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+% setcounter'ы требуются, чтобы нумерация не ехала, если захочется подключить только один из этих файлов.
+\newcommand{\includelect}[1]
+{\section*{Лекция #1}\addcontentsline{toc}{section}{Лекция #1}\input{Lectures/Lectures-#1}}%\setcounter{section}{#1}}
 
 \begin{document}
 	\title{Основы функционального анализа, второй семестр.}
     \author{Тресков Сергей Андреевич}
     \maketitle
     
-    \tableofcontents %Пока настолько убогое, что не хочется добавлять.
+    \tableofcontents % Вроде ок.
 
 	\pagebreak
-	
-	% setcounter'ы требуются, чтобы нумерация не ехала, если захочется подключить только один из этих файлов.
-
-    \input{Lectures/Lectures-1}
-    \setcounter{section}{1}
-    \input{Lectures/Lectures-2}
-    \setcounter{section}{2}
-    \input{Lectures/Lectures-3}
-    \setcounter{section}{3}
-    \input{Lectures/Lectures-4}
-    \setcounter{section}{4}
-    \input{Lectures/Lectures-5}
-    \setcounter{section}{5}
-    \input{Lectures/Lectures-6}
-    \setcounter{section}{6}
-    \input{Lectures/Lectures-7}
+    \includelect{1}
+    \includelect{2}
+    \includelect{3}
+    \includelect{4}
+    \includelect{5}
+    \includelect{6}
+    \includelect{7}
+    \includelect{8}
+    \includelect{9}
 \end{document}
