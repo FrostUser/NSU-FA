@@ -1,8 +1,8 @@
-\documentclass[a5paper, 12pt]{article}
+\documentclass[b5paper, 12pt]{article}
 
 \input{Includes/Base}
-\usepackage{ulem}
 \usepackage[cm]{fullpage}
+\usepackage{ulem}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -12,6 +12,9 @@
     linkcolor=black,
     urlcolor=black
 }
+
+\renewcommand{\todo}{}
+
 % setcounter'ы требуются, чтобы нумерация не ехала, если захочется подключить только один из этих файлов.
 \newcommand{\includelect}[1]
 {\section*{Лекция #1}\addcontentsline{toc}{section}{Лекция #1}\input{Lectures/Lectures-#1}}%\setcounter{section}{#1}}
@@ -33,4 +36,5 @@
     \includelect{7}
     \includelect{8}
     \includelect{9}
+    \includelect{10}
 \end{document}

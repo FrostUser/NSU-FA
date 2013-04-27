@@ -15,9 +15,6 @@
 
 %\usepackage[normalem]{ulem} % for crossing text out - \sout
 
-% Redefining \def is impossible. I tried, but it is impossible.
-%\let\def_prev\def
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %           MATH OPERATORS SPACING            %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -38,11 +35,14 @@
 \newcommand{\norm}[1]{\left\| #1 \right\|}
 \newcommand{\scal}[2]{\left\langle #1, #2 \right\rangle}
 \newcommand{\angular}[1]{\langle #1 \rangle}
-\renewcommand{\mod}[1]{|\! #1 \!|}
+\renewcommand{\mod}[1]{\left| #1 \right|}
+
+\newcommand{\supp}{\,\text{supp}\,}
 
 \newcommand{\Sum}[2]{\underset{#1}{\overset{#2}{\sum}}}
 \newcommand{\Int}[2]{\underset{#1}{\overset{#2}{\int}}}
 \newcommand{\Ker}{\text{Ker}}
+\renewcommand{\Im}{\text{Im}}
 
 % Physicists' variant of dot product
 \newcommand{\pscal}[2]{\, \langle #1 | #2 \rangle \,}
