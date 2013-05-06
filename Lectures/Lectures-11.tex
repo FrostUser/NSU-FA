@@ -112,5 +112,61 @@
 	
 	\begin{theorem}
 		(О существовании и единственности решения уравнения Вольтера)
+		Уравнение Вольтера
+		$$x(t) = \underbrace{\int_a^t k(t,s) x(s) \, ds}_{(Ax)(t)} + f(t) \qquad t\in [a,b]$$
+		имеет единственное решение, которое может быть найдено методом последовательных приближений.
 	\end{theorem}		
+	
+	\begin{proof}
+		Рассмотрим ряд ($I + A + A^2 + \ldots$). Если взять первые $n$ слагаемых этого ряда и умножить их на $(I - A)$, 
+		получим следующее выражение:
+		$$(I-A) \cdot \sum_{k=0}^n A^k = I - A + A - A^2 + A^2 - A^3 \pm\ldots = I - A^n$$
+		
+		\todo{Точно ли $-1$-ая степень?}
+		Значит, если этот ряд сходится, то он будет сходиться к $(I - A)^{-1}$. Но сходимость не доказана.
+		
+		Оператор $(Ax)(t)$ можно рассматривать как скалярное произведение в $\mathbb{L}_2$. Тогда, из неравенства Шварца:
+		$$\mod{(Ax)(t)}^2 \leq 
+		  \int_a^t \mod{k(t,s)}^2 \,ds \cdot \int_a^t \mod{x(s)}^2 \,ds \leq \ldots$$
+		  
+		Сделаем предположение, сильно упрощающее доказательство теоремы. Пусть ядро оператора $A$ 
+		ограничено: $\mod{k(t,s)} \leq M$. Продолжим цепочку неравенств:
+		
+		$$\ldots \leq M^2(t-a) \int_a^b \mod{x(s)}^2 \,ds = M^2(t-a)\norm{x}^2$$
+		
+		Таким образом, оператор $A$ ограничен. Рассмотрим теперь $A^2$.
+		
+		\begin{align*}
+			{(A^2x)(t)}^2 = \mod{\int_a^t k(t,s)(Ax)(s) \,ds} \leq M^2(t-a)\int_a^t\mod{(Ax)(s)}^2\,ds \leq \\ 
+			\leq M^2(t-a)\int_a^tM^2(s-a)\norm{x}^2 \,ds = M^4 \norm{x}^2 \frac{(t-a)^2}{2}(t-a)
+		\end{align*}
+		
+		Таким образом, $A^2$ --- тоже ограниченный оператор. Применяя подобные рассуждения для $A^3$, получаем:
+		
+		$$\mod{(A^3x)(t)}^2 \leq M^6 \frac{(t-a)^5}{8}\norm{x}^2 $$
+		И, наконец, получаем формулу для $A^n$:
+		$$\mod{(A^nx)(t)}^2 \leq M^{2n} \frac{(t-a)^{2n-1}}{(2(n-1))!!}\norm{x}^2 $$
+		
+		Теперь можно легко показать, что выполнено необходимое условие сходимости ряда 
+		($\underset{n\rightarrow\infty}{\lim} a_n = 0$):
+		$$\norm{A^nx}^2 = \int_a^b \mod{(A^nx)(t)}^2 \,dt \leq \norm{x}^2 M^{2n} \frac{(b-a)^{2n}}{(2n)!!}$$
+		$$\norm{A^n} = \frac{\norm{A^nx}}{\norm{x}} \leq 
+		  \left( M^n\cdot\frac{(b-a)}{\sqrt{2}}\right)^n \frac{1}{\sqrt{n!}} \rightarrow 0$$
+		  
+		Так как $\norm{A^n} \rightarrow 0$, то $\exists n_0,\,\norm{A^{n_0}} < \frac{1}{2}$. Тогда
+		$$\norm{I + A + \ldots + A^n + \ldots} \leq 1 + \norm{A} + \ldots + \norm{A^n} + \ldots$$
+		
+		Рассмотрим несколько частичных сумм этого ряда:
+		\begin{align*}
+			1 + \underset{< \frac{1}{2}}{\norm{A^{n_0}}} + \underset{< \frac{1}{4}}{\norm{A^{2n_0}}} + \ldots &\leq 2 \\
+			A + \underset{< \frac{1}{2}\norm{A}}{\norm{A^{n_0+1}}} 
+			+ \underset{< \frac{1}{4}\norm{A}}{\norm{A^{2n_0+1}}} + \ldots &\leq 2 \norm{A} \\
+			A^2 + \underset{< \frac{1}{2}\norm{A^2}}{\norm{A^{n_0+2}}} 
+			+ \underset{< \frac{1}{4}\norm{A^2}}{\norm{A^{2n_0+2}}} + \ldots &\leq 2 \norm{A^2} \\
+		\end{align*}
+		Следовательно, норма этого ряда не превышает конечной суммы ограниченных слагаемых:
+		$$\norm{I + A + A^2 + \ldots} \leq 2\cdot\sum_{k=0}^n\norm{A^k} \qquad n_0 < \infty$$
+		
+		\section{Элементы вариационного исчисления}
+	\end{proof}
 \end{document}
