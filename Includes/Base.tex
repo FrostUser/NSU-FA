@@ -1,5 +1,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
+\usepackage[T1]{fontenc}
 
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -42,15 +43,28 @@
 \newcommand{\Sum}[2]{\underset{#1}{\overset{#2}{\sum}}}
 \newcommand{\Int}[2]{\underset{#1}{\overset{#2}{\int}}}
 \newcommand{\Ker}{\text{Ker}}
+\newcommand{\Exists}{\text{\raisebox{-1pt}{\large$\exists$}}}
 \renewcommand{\Im}{\text{Im}}
+\newcommand{\Lims}[2]{ \underset{#1}{\overset{#2}{\Big|}}  }
+\newcommand{\lims}[2]{\Big|_{#1}^{#2}}
 
 % Physicists' variant of dot product
 \newcommand{\pscal}[2]{\, \langle #1 | #2 \rangle \,}
 \newcommand{\bra}[1]{\, \langle #1 |}
 \newcommand{\ket}[1]{| #1 \rangle \,}
 
+\newcommand{\opt}[1]{{\footnotesize #1 \par}}
+\newcommand{\off}[1]{{\color{gray}#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       DOCUMENT STYLE REDEFINITIONS          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\geq}{\geqslant}
+
+\let\reftemp\ref
+\renewcommand{\ref}[1]{(\reftemp{#1})}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %         THEOREM DEFINITION LINES            %
@@ -60,6 +74,7 @@
 \newtheorem{note}{Замечание}[section]
 \newtheorem{defi}{Определение}[section]
 \newtheorem{theorem}{Теорема}[section]
+\newtheorem*{theorem*}{Теорема}
 \newtheorem{state}{Утверждение}[section] % statement
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -67,8 +82,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{graphicx}
+\usepackage{subcaption} % for \begin{subtable}
+\usepackage{float}
 
 \graphicspath{{./Graphics/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                  COPYRIGHTS                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\copyvar}[1]{\par\opt{В.А. Александров, А.А. Егоров. Вариационное исчисление. #1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %               DRAFT TEMPLATES               %

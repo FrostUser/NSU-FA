@@ -1,7 +1,6 @@
 \documentclass[12pt]{article}
 
-\input{Includes/Base}
-\usepackage{ulem}
+\usepackage{standalone}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks,
@@ -10,18 +9,27 @@
     linkcolor=black,
     urlcolor=black
 }
+
+\input{Includes/Base}
+
 % setcounter'ы требуются, чтобы нумерация не ехала, если захочется подключить только один из этих файлов.
 \newcommand{\includelect}[1]
 {\section*{Лекция #1}\addcontentsline{toc}{section}{Лекция #1}\input{Lectures/Lectures-#1}}%\setcounter{section}{#1}}
 
 \begin{document}
-	\title{Основы функционального анализа, второй семестр.}
-    \author{Тресков Сергей Андреевич}
+	\title{Основы функционального анализа и теории функций, четвёртый семестр.}
+    \author
+    {
+		Лектор --- Тресков Сергей Андреевич\\
+		Лекции записаны Ремневым Михаилом
+    }
+    \date{2013 год}
     \maketitle
     
     \tableofcontents % Вроде ок.
 
 	\pagebreak
+	
     \includelect{1}
     \includelect{2}
     \includelect{3}
@@ -32,4 +40,6 @@
     \includelect{8}
     \includelect{9}
     \includelect{10}
+    \includelect{11}
+    \includelect{12}
 \end{document}
