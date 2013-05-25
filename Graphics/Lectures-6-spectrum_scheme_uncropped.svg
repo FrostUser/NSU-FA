@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="Scheme.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path3883"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="226.15006"
+     inkscape:cy="819.50168"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1366"
+     inkscape:window-height="744"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1">
+    <sodipodi:guide
+       orientation="0,1"
+       position="257.5889,904.08653"
+       id="guide3023" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="277.79195,1059.65"
+       id="guide3025" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="401.03056,878.83271"
+       id="guide3027" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="252.14286,787.14286"
+       id="guide4569" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3003"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(139.13709,6.0609153)"><flowRegion
+         id="flowRegion3005"><rect
+           id="rect3007"
+           width="114.14723"
+           height="22.223358"
+           x="172.73608"
+           y="55.341621" /></flowRegion><flowPara
+         id="flowPara3009"
+         style="font-size:14px">Оператор A - λI</flowPara></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="122.97466"
+       y="147.2655"
+       id="text3015"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3017"
+         x="122.97466"
+         y="147.2655">обратимый</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="533.09656"
+       y="147.2655"
+       id="text3019"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3021"
+         x="533.09656"
+         y="147.2655">не обратимый</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3029"
+       style="font-size:14px;font-style:normal;font-weight:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(42,0)"><flowRegion
+         id="flowRegion3031"><rect
+           id="rect3033"
+           width="270.36194"
+           height="132.22845"
+           x="412.14224"
+           y="164.4381"
+           style="text-align:start;text-anchor:start" /></flowRegion><flowPara
+         id="flowPara3035">Неинъективен, значит найдётся xотя бы один вектор x ≠ 0, такой, что </flowPara><flowPara
+         id="flowPara3037"
+         style="text-align:start;text-anchor:start">(A - λI)x = 0</flowPara><flowPara
+         style="text-align:start;text-anchor:start"
+         id="flowPara3041">В таком случае будем называть λ собственным значением, а x - собственным вектором.</flowPara><flowPara
+         style="text-align:start;text-anchor:start"
+         id="flowPara3067">λ ∈ σ<flowSpan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="flowSpan3075">d</flowSpan> (дискретный спектр)</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend);display:inline"
+       d="M 345.22851,79.504061 161.38075,134.0523"
+       id="path3047"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="3" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend);display:inline"
+       d="M 399.03884,79.727413 582.8866,134.27565"
+       id="path3047-9"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="3" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3077"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(22.142857,87.827334)"><flowRegion
+         id="flowRegion3079"><rect
+           id="rect3081"
+           width="165.66502"
+           height="51.51778"
+           x="210.11172"
+           y="163.42795" /></flowRegion><flowPara
+         id="flowPara3085"
+         style="text-align:center;text-anchor:middle">не всюду плотна </flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4502"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:14px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion4504"><rect
+           id="rect4506"
+           width="199.28572"
+           height="77.85714"
+           x="193.57143"
+           y="208.07646" /></flowRegion><flowPara
+         id="flowPara4508"></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4510"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(12.857143,65)"><flowRegion
+         id="flowRegion4512"><rect
+           id="rect4514"
+           width="206.74484"
+           height="27.857141"
+           x="194.28572"
+           y="207.36218" /></flowRegion><flowPara
+         id="flowPara4516">λ ∈ σ<flowSpan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="flowSpan4518">r</flowSpan> (остаточный спектр)</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3077-4"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(-166.27588,132.82733)"><flowRegion
+         id="flowRegion3079-1"><rect
+           id="rect3081-8"
+           width="165.66502"
+           height="51.51778"
+           x="210.11172"
+           y="163.42795" /></flowRegion><flowPara
+         id="flowPara3085-3"
+         style="text-align:center;text-anchor:middle">всюду плотна </flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4553"
+       style="font-size:14px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(20,0)"><flowRegion
+         id="flowRegion4555"><rect
+           id="rect4557"
+           width="247.14285"
+           height="24.285715"
+           x="21.428572"
+           y="156.6479"
+           style="text-align:center;text-anchor:middle" /></flowRegion><flowPara
+         id="flowPara4559">область определения (A - λI)<flowSpan
+   style="font-size:65.00091553%;text-align:center;text-anchor:middle;baseline-shift:super"
+   id="flowSpan4561">-1</flowSpan></flowPara></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="54.428574"
+       y="383.07648"
+       id="text4571"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4573"
+         x="54.428574"
+         y="383.07648">(A - λI)<tspan
+   style="font-size:65.00091553%;baseline-shift:super"
+   id="tspan4575">-1</tspan> ограничен</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       x="282.67944"
+       y="382.02313"
+       id="text4571-5"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4573-6"
+         x="282.67944"
+         y="382.02313">(A - λI)<tspan
+   style="font-size:65.00091553000000033%;baseline-shift:super;font-weight:normal;-inkscape-font-specification:Sans;font-style:normal"
+   id="tspan4575-1">-1</tspan> не ограничен</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="26.714287"
+       y="413.07648"
+       id="text4603"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4605"
+         x="26.714287"
+         y="413.07648">λ ∈ r (регулярное значение) </tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4510-0"
+       style="font-size:14px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(66.177891,185.895)"><flowRegion
+         id="flowRegion4512-6"><rect
+           id="rect4514-7"
+           width="206.74484"
+           height="39.285713"
+           x="194.28572"
+           y="207.36218"
+           style="text-align:center;text-anchor:middle" /></flowRegion><flowPara
+         id="flowPara4516-0">λ ∈ σ<flowSpan
+   style="font-size:65.00091553%;text-align:center;text-anchor:middle;baseline-shift:sub"
+   id="flowSpan4649">c</flowSpan> (непрерывный спектр)</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend);display:inline"
+       d="m 178.57143,178.07647 132.85714,67.14285"
+       id="path4651"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="3" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="M 162.85714,175.93361 127.14286,292.36218"
+       id="path4835"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="3" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 108.57143,315.93361 -16.428577,50"
+       id="path5019"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="3" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 143.57143,316.6479 213.57143,45.71428"
+       id="path5205"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="3" />
+  </g>
+</svg>

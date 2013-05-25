@@ -1,0 +1,101 @@
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{xcolor}
+
+\usepackage{indentfirst}
+
+%\usepackage{marginnote} % this is used for notes on the right margin --- \marginnote{\footnotesize txt}
+
+\usepackage{mathtools} % for mathclap command
+
+%\usepackage[normalem]{ulem} % for crossing text out - \sout
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           MATH OPERATORS SPACING            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\let\existstemp\exists
+\let\foralltemp\forall
+\renewcommand{\exists}{\: \existstemp \:}
+\newcommand{\existsonly}{\: \existstemp ! \:}
+\renewcommand{\forall}{\: \foralltemp \:}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            COMMAND SHORTHANDS               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\example}{{\itshape Пример. }}
+\newcommand{\equals}{\Leftrightarrow}
+\newcommand{\exc}{{\bfseries Упражнение. }}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\scal}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\angular}[1]{\langle #1 \rangle}
+\renewcommand{\mod}[1]{\left| #1 \right|}
+
+\newcommand{\supp}{\,\text{supp}\,}
+
+\newcommand{\Sum}[2]{\underset{#1}{\overset{#2}{\sum}}}
+\newcommand{\Int}[2]{\underset{#1}{\overset{#2}{\int}}}
+\newcommand{\Ker}{\text{Ker}}
+\newcommand{\Exists}{\text{\raisebox{-1pt}{\large$\exists$}}}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\Lims}[2]{ \underset{#1}{\overset{#2}{\Big|}}  }
+\newcommand{\lims}[2]{\Big|_{#1}^{#2}}
+
+% Physicists' variant of dot product
+\newcommand{\pscal}[2]{\, \langle #1 | #2 \rangle \,}
+\newcommand{\bra}[1]{\, \langle #1 |}
+\newcommand{\ket}[1]{| #1 \rangle \,}
+
+\newcommand{\opt}[1]{{\footnotesize #1 \par}}
+\newcommand{\off}[1]{{\color{gray}#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       DOCUMENT STYLE REDEFINITIONS          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+
+\let\reftemp\ref
+\renewcommand{\ref}[1]{(\reftemp{#1})}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%         THEOREM DEFINITION LINES            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{lem}{Лемма}[section]
+\newtheorem{note}{Замечание}[section]
+\newtheorem{defi}{Определение}[section]
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem*{theorem*}{Теорема}
+\newtheorem{state}{Утверждение}[section] % statement
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%             GRAPHICS INCLUSION              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{graphicx}
+\usepackage{subcaption} % for \begin{subtable}
+\usepackage{float}
+
+\graphicspath{{./Graphics/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                  COPYRIGHTS                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\copyvar}[1]{\par\opt{В.А. Александров, А.А. Егоров. Вариационное исчисление. #1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%               DRAFT TEMPLATES               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{marginnotes}
+\newcommand{\todo}[1]{\marginpar{\color{red} \tiny #1}}
