@@ -15,10 +15,6 @@
 
 \input{Includes/Base}
 
-% setcounter'ы требуются, чтобы нумерация не ехала, если захочется подключить только один из этих файлов.
-\newcommand{\includelect}[1]
-{\section*{Лекция #1}\addcontentsline{toc}{section}{Лекция #1}\input{Lectures/Lectures-#1}}%\setcounter{section}{#1}}
-
 \begin{document}
 	\title{Основы функционального анализа и теории функций, четвёртый семестр.}
     \author
@@ -33,17 +29,8 @@
 
 	\pagebreak
 	
-    \includelect{1}
-    \includelect{2}
-    \includelect{3}
-    \includelect{4}
-    \includelect{5}
-    \includelect{6}
-    \includelect{7}
-    \includelect{8}
-    \includelect{9}
-    \includelect{10}
-    \includelect{11}
-    \includelect{12}
-    \includelect{13}
+    \input{Chapters/Chapter-6}
+    \input{Chapters/Chapter-7}
+    \input{Chapters/Chapter-8}
+    \input{Chapters/Chapter-9}
 \end{document}
