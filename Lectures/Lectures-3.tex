@@ -19,7 +19,7 @@
 	Пространства $l_2$ и $\mathbb{L}_2$ ---полные, сепарабельные и бесконечномерные пространства.
 	
 	В прошлой лекции было рассмотрено неравенство Бесселя: \\
-	$$\norm{h}^2 \geq \sum_{k=1}^{\infty}\scal{h_k}{e_k}$$
+	$$\norm{h}^2 \geq \sum_{k=1}^{\infty}\scal{h}{e_k}$$
 	Где $h = \sum_{n=1}^{\infty} \alpha_i e_i$ и, так как система векторов $\{ e_i \}$ ортонормированна, 
 	$\alpha_k = \scal{h}{e_k}$. Вектор $h$ относительно некоторого подпространства может быть представлен в виде суммы
 	ортогональной проекции $g$ и вектора $f$ из ортогонального дополнения к этому подпространству. 
@@ -104,6 +104,7 @@
 		
 		$$ \norm{\Phi(t)}^2_{\mathbb{L}_2} = \int_0^{2\pi} \Phi(t) \cdot \overline{\Phi(t)} dt = $$
 		$$ = \int_0^{2\pi}\Big(\Phi(t) - \sum_{-n}^n \alpha_k e^{ikt}\Big)\overline{\varphi}(t) \,dt \leq $$
+		Равенство сохранилось, так как $\forall k,\: \int_0^{2\pi}e^{ikt}\overline{\Phi}(t) \,dt = 0$
 		$$ \leq \varepsilon \int_0^{2\pi} | \Phi(y) | dt \leq \norm{\Phi} \cdot \varepsilon\sqrt{2\pi} $$
 		Отсюда получается, что $\norm{\Phi} \leq \varepsilon \sqrt{2\pi}$, значит $\norm{\Phi} \rightarrow 0$ или, точнее сказать,
 		равна нулю почти всюду.\\
@@ -146,17 +147,18 @@
 	Тогда можно определить следующие свойства:
 	\begin{itemize}
 		\item Одноначность (при принятых выше условиях).
-		\item Если $n > m$, тогда $q_n \perp \mathtt{P}_m$
+		\item Если $n > m$, тогда $q_n \perp \mathtt{P}_m$, где $\mathtt{P}_m$ --- линейная комбинация $q_0, \dots , q_m$.
 		\item Имеет место рекуррентное соотношение: \\
 		$$ x \cdot q_n(x) = 
-		\alpha_{n+1,n} q_{n+1} + \alpha_{n,n} q_n(x) + \alpha_{n-1, n} q_{n-1} (x) + \ldots + \alpha_{n-k, n} q_{n-k} (x) $$
+		\alpha_{n+1,n} q_{n+1}(x) + \alpha_{n,n} q_n(x) + \alpha_{n-1, n} q_{n-1} (x) + \ldots + \alpha_{n-k, n} q_{n-k} (x) $$
 		
 		Где $\alpha_{k, n}$ --- некоторые коэффициенты, с $k$ --- степенью текущего слагаемого и $n$ --- степень многочлена, который 
 		домножается	на $x$.
 		
-		Рассмотрим $\scal{x q_n, q_k(x)} = \int_a^b x q_n(x) q_k(x) dx = \alpha_{k,n} \int q_k(x) q_k(x) = \alpha_{k,n}$.
-		Отсюда следует, что $\alpha_{k,n} = \alpha_{n,k} \Rightarrow$ для $n > k+1,\alpha_{k,n} = 0$. Это означает, что исходное соотношение
-		может быть записано как:
+		Рассмотрим $\scal{x q_n(x)}{q_k(x)} = \int_a^b x q_n(x) q_k(x) \,dx
+		            = \alpha_{k,n} \int_a^b q_k(x) q_k(x) \,dx = \alpha_{k,n}$.
+		Отсюда следует, что $\alpha_{k,n} = \alpha_{n,k} \Rightarrow$ для $n > k+1,\alpha_{k,n} = 0$. 
+		Это означает, что исходное соотношение может быть записано как:
 		$$ x \cdot q_n(x) = 
 		\alpha_{n+1,n} q_{n+1} + \alpha_{n,n} q_n(x) + \alpha_{n-1, n} q_{n-1} (x)$$
 		Запишем $q_n = a_n x^n + b_n x^{n-1} + \ldots$
