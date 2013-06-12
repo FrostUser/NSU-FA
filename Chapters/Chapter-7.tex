@@ -24,7 +24,7 @@
 	нашем курсе, будем предполагать, что $M$ и $L$ --- нормированные пространства. А если есть норма $\Rightarrow$ есть расстояние
 	$\Rightarrow$ может быть определена непрерывность. Если $A$ непрерывно в $h_0$, пишут:
 	
-	$$ \forall \varepsilon > 0 \exists \delta > 0 : \forall h \: \norm{h - h_0} < \delta \Rightarrow \norm{Ah  Ah_0} 
+	$$ \forall \varepsilon > 0 \exists \delta > 0 : \forall h \: \norm{h - h_0} < \delta \Rightarrow \norm{Ah - Ah_0} 
 	= \norm{A(h-h_0)} < \varepsilon $$
 	Нетрудно видеть, что из непрерывности в точке следует непрерывность в нуле --- для этого нужно взять $h := h + h_0$. 
 	Так же можно сделать для любой точки множества. Значит, $A$ непрерывна на всём множестве. Тогда, исходя из данного
@@ -36,8 +36,8 @@
 		\item Нулевой оператор
 		\item Оператор проектирования на замкнутое подпространство гильбертова пространства.
 		\item $f(t) \rightarrow t \cdot f(t)$ в пространстве $\mathbb{L}_2 (0,1) \rightarrow \mathbb{L}_2 (0,1)$
-		\item Оператор дифференцирования: $\text{\emph{D}}: \mathbb{L}_2 (0,1) \rightarrow \mathbb{L}_2 (0,1)$. Отметим также, что
-		область определения этого оператора $D(\text{\emph{D}}) \neq \mathbb{L}_2 (0,1)$
+		\item Оператор дифференцирования: $\mathsf{D}: \mathbb{L}_2 (0,1) \rightarrow \mathbb{L}_2 (0,1)$. Отметим также, что
+		область определения этого оператора $D(\mathsf{D}) \neq \mathbb{L}_2 (0,1)$
 		\item $f(x) \rightarrow \int_0^x f(t) dt$.
 	\end{itemize}
 	
@@ -46,13 +46,15 @@
 		\item $A$ - инъективно.
 		\item $D(A^{-1}) = $ образ прямого отображения
 	\end{enumerate}
-	В наших обозначениях, обратный оператор всегда определяет обратное отображение.
+	В наших обозначениях, обратный оператор всегда определяет обратное отображение. 
+	\off{В некоторых книгах это может быть не так.}
 
 	\subsection{Ограниченный линейный оператор}	
 	
-	\begin{defi}
-		Множество ограничено, если существет шар с центром в точке $O$, в котором содержится все множество.
-	\end{defi}
+	% Является менее удачным вариантом следующего определения
+	%\begin{defi}
+	%	Множество ограничено, если существет шар с центром в точке $O$, в котором содержится все множество.
+	%\end{defi}
 	\begin{defi}
 		Множество $M$ \textbf{ограничено}, если существет шар $B_r(a)$, в котором содержится все множество:
 		$$ \exists a \in X \; \exists (r > 0) \; \forall x \in X (x \in M \Rightarrow \rho(a, x) < r) $$
@@ -68,7 +70,8 @@
 	\begin{proof}
 		\textbf{Необходимость}. Если $A$ --- непрерывный оператор, то 
 		$ \exists \delta : \norm{h} < \delta \Rightarrow \norm{Ah} < 1 $,
-		откуда следует, что $\norm{h} < R$. 
+		откуда следует, что $\norm{h} < R$. (Для удобства в определении 
+		непрерывного оператора взяли $\varepsilon = 1$.)
 		
 		Рассмотрим вектор $x = \frac{\delta h}{R}$. В указанных условиях
 		$\norm{x} < \frac{\delta}{R}$, откуда следует $\norm{Ax} < 1$ и, из линейности оператора и свойств нормы:
@@ -86,7 +89,7 @@
 	\subsection{Норма линейного оператора}
 	
 	\begin{defi}
-		\textbf{Нормой линейного оператора} $A$ называется выражение вида 
+		\textbf{Нормой линейного оператора} $A$ называется следующая величина: 
 		$$\norm{A} \overset{df}{=} \underset{x \neq 0}{sup} \frac{\norm{Ax}}{\norm{x}}$$
 	\end{defi}
 	
@@ -152,20 +155,20 @@
 	\end{defi}
 	
 	Покажем, что функция $(Af)(t)$ определена почти для всех $t$. Пользуясь определением скалярного произведения в $\mathbb{L}_2$, 
-	видим, что $\norm{(Af)(t)}^2 = (\scal{f}{k})^2 \leq \norm{f}^2 \cdot \underset{\text{на }\mathbb{R}^k}{\norm{k}^2}$
+	видим, что $\mod{(Af)(t)}^2 = (\scal{f}{k})^2 \leq \norm{f}^2 \cdot \underset{\text{на }\mathbb{R}^k}{\norm{k}^2}$
 	
-	$$ \norm{(Af)(t)}^2 \leq \underset{\mathbb{R}^k}{\int} |f(y)|^2 dy \cdot \underset{\mathbb{R}^k}{\int} |k(t,y)|^2 dy $$
+	$$ \mod{(Af)(t)}^2 \leq \underset{\mathbb{R}^k}{\int} |f(y)|^2 dy \cdot \underset{\mathbb{R}^k}{\int} |k(t,y)|^2 dy $$
 	
 	Проинтегрируем обе части выражения по множеству $\mathbb{R}^n$:
 	
-	$$ \Int{\mathbb{R}^n}{} \norm{(Af)(t)}^2 \, dt \leq \underset{\mathbb{R}^k}{\int} |f(y)|^2 \, dy 
+	$$ \Int{\mathbb{R}^n}{} \mod{(Af)(t)}^2 \, dt \leq \underset{\mathbb{R}^k}{\int} |f(y)|^2 \, dy 
 	   \cdot \Int{\mathbb{R}^n}{} \Int{\mathbb{R}^k}{} |k(t,y)|^2 \, dt \, dy $$
 	
 	$k(t,y)$ почти всюду определена в $\mathbb{R}^k$, интегрируема
 	в $\mathbb{R}^k$ по условию. Значит, по теореме Фубини можем переставить пределы интегрирования 
 	и перейти к норме на $\mathbb{R}^n$.
 	
-	$$ \Int{\mathbb{R}^n}{} \norm{(Af)(t)}^2 \, dt \leq \norm{f}^2_{\mathbb{L}_2} \cdot \norm{k}^2_{\mathbb{L}_2} $$
+	$$ \Int{\mathbb{R}^n}{} \mod{(Af)(t)}^2 \, dt \leq \norm{f}^2_{\mathbb{L}_2} \cdot \norm{k}^2_{\mathbb{L}_2} $$
 
 	\lecture{6}
 
@@ -173,7 +176,7 @@
 	пространств.
 	
 	\example \textit{(Неограниченного оператора)}. Оператор дифференцирования 
-	$\frac{d}{dx} \mathbb{L}_2(0, 1) \rightarrow \mathbb{C}_2(0, 1)$ является неограниченным. 
+	$\frac{d}{dx} : \mathbb{L}_2(0, 1) \rightarrow \mathbb{L}_2(0, 1)$ является неограниченным. 
 	Достаточно рассмотреть $\norm{sin(nx)}_{\mathbb{L}_2} \leq 1$. При воздействии на синус оператором дифференцирования, получим
 	$$|n \cdot cos(nx)| \geq n \cdot cos^2(nx) = n^2 \cdot \frac{1 + cos(2nx)}{2}$$
 	Таким образом, легко увидеть неограниченность нормы $n \cdot cos(nx)$:
@@ -193,11 +196,10 @@
 		\begin{enumerate}
 			\item $F$ --- полное.
 			\item $D(A_1) = E_1 \subset E_2$.
-			\item $\overline{E}_1 \subset E_2$ (То есть $E_1$ плотно в $E_2$).
+			\item $\overline{E}_1 \supset E_2$ (То есть $E_1$ плотно в $E_2$).
 		\end{enumerate}
 		То найдётся линейный оператор $A_2,\, D(A_2) = E_2$, такой, что: \\
-		\todo{Быть может, здесь неравенство?}
-		$\norm{A_2} \leq \norm{A_1}$ \\
+		$\norm{A_2} = \norm{A_1}$ \\
 		$A_2 \lims{E_1}{} = A_1$
 	\end{theorem}
 	
