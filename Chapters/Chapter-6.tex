@@ -665,15 +665,16 @@
 	
 	\subsubsection{Полиномы Чебышёва}
 	%\textit{Увы, ибо подходило к концу лекции время, нам довелось услышать лишь Родрига формулу:}
-	$$T_n(x) = cos(n \cdot arccos(x))$$
+	$$T_n(x) = \cos(n \cdot \arccos(x))$$
 
 	\lecture{5}
 
 	Продолжим рассмотрение полиномов Чебышёва:
 	
-	$$ T_n(x) = cos(n \cdot arccos(x)) $$
-	$$ T_n' = n \cdot sin(n \cdot arcos(x)) \frac{1}{\sqrt{1-x^2}} $$
-	$$ T_n'' = -n^2 \cdot cos(n \cdot arccos(x)) \cdot \frac{1}{1-x^2} + n \cdot sin(n \cdot arccos(x)) \frac{x}{(1-x^2)^{\frac{3}{2}}} $$
+	$$ T_n(x) = \cos(n \cdot \arccos(x)) $$
+	$$ T_n' = n \cdot \sin(n \cdot \arccos(x)) \frac{1}{\sqrt{1-x^2}} $$
+	$$ T_n'' = -n^2 \cdot \cos(n \cdot \arccos(x)) \cdot \frac{1}{1-x^2} 
+	   + n \cdot \sin(n \cdot \arccos(x)) \frac{x}{(1-x^2)^{\frac{3}{2}}} $$
 	
 	Попробуем получить дифференциальное уравнение для многочленов Чебышёва. Домножая $T_n''$, увидим, что
 	$$ (1-x^2) T_n'' = -n^2 T_n + x T_n' $$
@@ -692,7 +693,7 @@
 	$$ (1-x^2)(T_n'' T_m - T_m'' T_n) - x(T_n' T_m - T_m' T_n) + T_n T_m (n^2 - m^2) = 0 $$
 	
 	Наибольший интерес для нас представляет третье слагаемое: домножив его на весовую функцию для полиномов Чебышёва 
-	$h(x) = \frac{1}{\sqrt{1-x^2}}$ мы получим, с точностью до константы, подынтегральное выражение для скалярное произведения
+	$h(x) = \frac{1}{\sqrt{1-x^2}}$ мы получим, с точностью до константы, подынтегральное выражение для скалярного произведения
 	в рассматриваемом пространстве.
 	
 	$$ \int_{-1}^1 \sqrt{1-x^2} (T_n'' T_m - T_m'' T_n + \underline{T_n'T_m' - T_n'T_m'}) dx \: - $$
@@ -718,7 +719,7 @@
 	$$
 	$$
 		= \underbrace{u \cdot \sqrt{1-x^2} \: |_{-1}^1}_{\mathclap{\text{Равно нулю}}} - 
-		\underbrace{\int v \cdot du}_{\mathclap{\qquad \text{Равно первому слагаемому}}}
+		\underbrace{\int_{-1}^1 v \,du}_{\mathclap{\qquad \text{Равно первому слагаемому}}}
 	$$
 	
 	Отсюда, исходное равенство преобразуется в
@@ -756,11 +757,11 @@
 	\subsection{Функции Хаара}
 	
 	Также, для полноты представления ортогональных систем, ознакомимся с функциями Хаара. В разных книгах данный термин
-	может иметь разные значения. Мы обозначим функции Хаара таким образом: \\
+	может иметь разные значения. Мы определим функции Хаара таким образом: \\
 	Рассмотрим последовательность $h_0, h_1, \dots, h_n, \dots$ в пространстве $\mathbb{L}_1(0, 1)$
 	
 	\begin{figure}[H]
-		\begin{subfigure}[c]{0.5\textwidth}
+		\begin{subfigure}[c]{0.45\textwidth}
 		\vspace{-40pt}
 		\begin{eqnarray*}
 			h_0& =& 1 \\		
@@ -778,7 +779,7 @@
 		\end{eqnarray*}
 		\end{subfigure}
 		~
-		\begin{subfigure}[c]{0.5\textwidth}
+		\begin{subfigure}[c]{0.55\textwidth}
 			\includegraphics[width=0.95\textwidth]{../Graphics/Lectures-5-Haar_functions.png}
 			\caption{Графики некоторых функций Хаара.}
 		\end{subfigure}
