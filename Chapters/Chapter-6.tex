@@ -198,15 +198,25 @@
 
 		\subsubsection{Тождество параллелограмма}
 
-			\todo{Добавить док-во из семинаров}
+			\begin{state}
+				Тождество параллелограмма:
+				\begin{equation}
+					\label{eq:Parall}
+					\norm{x+y}^2 + \norm{x-y}^2 = 2 \left(\norm{x}^2 + \norm{y}^2\right)
+				\end{equation}
+				Обязательно выполнено для пространств с нормой, порождённой скалярным произведением.
+			\end{state}
 
-			\exc{Доказать тождество параллелограмма (обязательно выполнено для пространств с нормой,
-			порождённой скалярным произведением):
-			\begin{equation}
-				\label{eq:Parall}
-				\norm{x+y}^2 + \norm{x-y}^2 = 2 \norm{x}^2 + 2 \norm{y}^2
-			\end{equation}
-			}
+			\begin{proof}
+				\begin{equation*}
+					\begin{split}
+						\norm{x+y}^2 + \norm{x-y}^2 &= {\color{red}\scal{x+y}{x+y}}+{\color{blue}\scal{x-y}{x-y}} = \\
+						&= {\color{red}\scal{x}{x}+\scal{x}{y}+\scal{y}{x}+\scal{y}{y}} + \\
+						&+ {\color{blue}\scal{x}{x}-\scal{x}{y}-\scal{y}{x}+\scal{y}{y}} = \\
+						&= 2 \left(\norm{x}^2 + \norm{y}^2\right) \\
+					\end{split}
+				\end{equation*}
+			\end{proof}
 
 		\subsubsection{Неравенство Шварца}
 
