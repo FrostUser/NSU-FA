@@ -1323,7 +1323,7 @@
 				\item Если $A:E \rightarrow E$ --- компактный оператор, $dim(E) = \infty$, то $A^{-1}$ не может быть ограниченным. \\
 
 					$A A^{-1} = I$, но для бесконечномерного $E$, $I$ не является компактным оператором. Значит, 
-					из свойства \ref{compCompos} $A^{-1}$ не может быть ограниченным.
+					из свойства (\ref{compCompos}) $A^{-1}$ не может быть ограниченным.
 				\item $A_n$ --- компактный оператор, тогда, если $A_n:H_1 \rightarrow H_2$, $\norm{A_n - A} \rightarrow~0$, то 
 				оператор $A$ --- компактный. \label{compLim}
 		
@@ -1336,7 +1336,7 @@
 				$$x^1_1,\,x^2_2,\,\dots,\,x^k_k,\dots$$
 				в фундаментальную:
 				\begin{align*}
-					\norm{Ax_n^n - Ax_m^m} = \norm{Ax_n^n - A_kx^n_n + A_kx_n^n + A_kx_n^n - A_kx_m^m + A_kx_m^m - Ax_m^m} \leq \\
+					\norm{Ax_n^n - Ax_m^m} = \norm{Ax_n^n - A_kx^n_n + A_kx_n^n + A_kx_m^m - A_kx_m^m - Ax_m^m} \leq \\
 					\begin{aligned}
 						&\leq \norm{(A-A_k)x_n^n} &+ &\norm{A_k(x_n^n - x_m^m)} &+ &\norm{(A_k - A)x_m^m} \leq \\
 						&\leq \norm{A-A_k}\cdot\norm{x_n^n} &+ &\norm{A_k(x_n^n - x_m^m)} &+ &\norm{A_k - A} \cdot\norm{x_m^m}
@@ -1418,7 +1418,7 @@
 				\end{CD}
 				$$
 		
-				Отсюда очевидно следует, что $\lambda x_{n_k} \rightarrow y_0$. Тогда, для второго предела получаем (при $\lambda \neq 0$)
+				Отсюда очевидно следует, что $\lambda x_{n_k} \rightarrow y_0$ (и $x_{n_k} \rightarrow \frac{y_0}{\lambda}$). Тогда, для второго предела получаем (при $\lambda \neq 0$)
 				$$A\dfrac{y_0}{\lambda} = y_0 \Rightarrow Ay_0 = \lambda y_0$$
 		
 				То есть $y_0$ --- собственный вектор и тогда $\lambda \in \sigma_d(A)$.
