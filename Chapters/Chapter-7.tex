@@ -1137,7 +1137,9 @@
 		\end{theorem}
 		\begin{proof}
 			Из условий теоремы и из равносильного утверждения (\ref{eq:specCrit}) следует, что
-			$$\exists \{x_n\},\, \norm{x_n} = 1,\, \scal{Ax_n}{x_n} \rightarrow M$$
+			\begin{equation} \label{eq:scalLim}
+				\exists \{x_n\},\, \norm{x_n} = 1,\, \scal{Ax_n}{x_n} \rightarrow M
+			\end{equation}
 			\todo{Разбить выкладки на несколько частей с промежуточными пояснениями.}
 			Рассмотрим $\norm{A_Mx_n}^2$:
 			\begin{equation*}
@@ -1145,8 +1147,8 @@
 				\norm{A_Mx_n}^2 = \scal{Ax_n - Mx_n}{Ax_n - Mx_n} = \\
 				\norm{Ax_n}^2 + M^2\norm{x_n}^2 - 2M\scal{Ax_n}{x_n} 
 				\overset{\mathclap{\text{Так как }\norm{x_n}=1}}{\leq} \\
-				\leq 2M(M-\underbrace{\scal{Ax_n}{x_n}}_{\mathclap{\rightarrow 0 \text{ по (\ref{eq:specCrit})}}}) 
-				\leq M^2\norm{x_n}^2 = M^2
+				\leq 2M(\underbrace{M-\scal{Ax_n}{x_n}}_{\mathclap{\rightarrow 0 \text{ из (\ref{eq:scalLim})}}}) 
+				\underset{n \rightarrow \infty}{\rightarrow} 0
 			\end{split}
 			\end{equation*}
 		\end{proof}
