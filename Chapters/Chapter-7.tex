@@ -105,8 +105,8 @@
 			$$
 			$$
 				\leq
-				\underset{0 \leq \norm{y} \leq 1}{sup} \norm{Ay} \leq
-				\underset{0 \leq \norm{y} \leq 1}{sup} \frac{\norm{Ay}}{\norm{y}} \leq
+				\underset{0 < \norm{y} \leq 1}{sup} \norm{Ay} \leq
+				\underset{0 < \norm{y} \leq 1}{sup} \frac{\norm{Ay}}{\norm{y}} \leq
 				\underset{y \neq 0}{sup} \frac{\norm{Ay}}{\norm{y}} =
 				\norm{A}
 			$$
@@ -839,7 +839,7 @@
 	
 			\example Если $\exists H_1 \subset H$, то любой вектор $h$ представим как $h = g+f$, $g \in H_1$, $f\perp H_1$.
 			Рассмотрим оператор проектирования на $H_1$: $P_{H_1}h = g$. Тогда выполнены следующие равенства:
-			$$\scal{P_{H_1}h_1}{h_2} = \scal{h_1}{h_2} = \scal{g_1}{g_2} = \scal{g_1}{P_{H_1}h_2} = \scal{h_1}{P_{H_1}h_2}$$
+			$$\scal{P_{H_1}h_1}{h_2} = \scal{g_1}{h_2} = \scal{g_1}{g_2} = \scal{g_1}{P_{H_1}h_2} = \scal{h_1}{P_{H_1}h_2}$$
 			Из этой последоватльности равенств следует самосопряжённость оператора $P_{H_1}$.
 	
 			Для самосопряжённых операторов $A : H \rightarrow H$, $B : H \rightarrow H$ и чисел $\alpha,\, \beta \in \mathbb{R}$ верны следующие
@@ -984,8 +984,8 @@
 		\end{proof}
 	
 		\begin{theorem}
-			(О регулярных значениях самосопряжённого оператора) Пусть $A: H \rightarrow H$ --- линейный оператор, 
-			$A_{\lambda} = A - \lambda I$. Тогда верно следующее:
+			(О регулярных значениях самосопряжённого оператора) Пусть $A: H \rightarrow H$ --- линейный 
+			самосопряжённый оператор, $A_{\lambda} = A - \lambda I$. Тогда верно следующее:
 			$$\lambda \in r_{A}(z) \Leftrightarrow \exists C > 0,\, \forall x \in H,\, \norm{A_{\lambda}x} \geq C\cdot\norm{x}$$
 		\end{theorem}
 		\begin{proof}
@@ -1010,9 +1010,9 @@
 			По условию теоремы, выполнено следующее неравенство:
 			$$\norm{A_{\lambda}x} \geq C\cdot\norm{x}$$
 		
-			Введём линейное пространство $L = \{ h|h=A_{\lambda}x\}$ Если $\lambda \in r_A$, то область определения
+			Рассмотрим линейное пространство $L = \{ h|h=A_{\lambda}x\}$ Если $\lambda \in r_A$, то область определения
 			$A_{\lambda}^{-1}$ всюду плотна. Предположим, что это не так. Пусть $L$ не 
-			является всюду плотным пространством $\left(\overline{L}\neq H\right)$.
+			является всюду плотным подпространством $\left(\overline{L}\neq H\right)$.
 		
 			Это будет означать, что ортогональное дополнение к $L$ будет содержать ненулевой вектор:
 			$$x_0 \in L^{\perp} \qquad x_0 \neq 0$$
@@ -1064,7 +1064,7 @@
 		Факты, доказанные на прошлой лекции, послужат основой для доказательства теорем этой лекции.
 		Повторно выпишем равносильные утверждения для принадлежности $\lambda$ к регулярным значениям и к спектру.
 	
-		$$A:H \rightarrow H \text{--- самосопряжённый.}$$
+		$$\text{Если } A:H \rightarrow H \text{--- самосопряжённый, то}$$
 		\begin{align}
 			\lambda \in R_A       &\equals \exists C > 0, \forall h \norm{A_{\lambda}h} \geq C\norm{h} \label{eq:regCrit}\\
 			\lambda \in \sigma(A) &\equals \exists\{x_n\}, \norm{x_n} = 1, A_{\lambda}x_n \rightarrow 0 \label{eq:specCrit}
@@ -1085,11 +1085,12 @@
 		
 			Возьмём модуль от обеих частей уравнения. Используя факт, что модуль разности не превосходит суммы модулей и неравенство Шварца, 
 			прийдём к неравенству, доказывающему теорему:
-			$$2\beta\norm{x}^2 = |\!\scal{A_{\lambda}x}{x} - \scal{x}{A_{\lambda}x}\!| \leq |\!\scal{A_{\lambda}x}{x}\!| + |\!\scal{x}
-			{A_{\lambda}x}\!| \leq 2\norm{A_{\lambda}x}\cdot\norm{x}$$
+			$$2\mod{\beta}\norm{x}^2 = |\!\scal{A_{\lambda}x}{x} - \scal{x}{A_{\lambda}x}\!| \leq |\!\scal{A_{\lambda}x}{x}\!| 
+			+ |\!\scal{x} {A_{\lambda}x}\!| \leq 2\norm{A_{\lambda}x}\cdot\norm{x}$$
 		
 			\todo{Быть может, лучше говорить <<критерий регулярности>>?}
-			Теперь, то, что $\lambda \in R_A$ очевидно: нужно в равносильном утверждении (\ref{eq:regCrit}) взять $C = \beta$. \\
+			Теперь, то, что $\lambda \in R_A$ очевидно: нужно в равносильном утверждении 
+			(\ref{eq:regCrit}) взять $C = \mod{\beta}$. \\
 		\end{proof}
 	
 		В частности, это утверждение означает, что для самосопряжённого оператора $A$, $\sigma(A)\subset\mathbb{R}$. Тогда имеет смысл
@@ -1131,9 +1132,8 @@
 		Благодаря этим выкладкам, можно воспользоваться теоремой о норме самосопряжённого оператора.
 	
 		\begin{theorem}
-			%(О норме самосопряжённого оператора)
 			Если $A$ --- самосопряжённый, $0 \leq m \leq M$ (Для любого самосопряжённого оператора можно добиться выполения этого свойства),
-			то $m,\,M \in \sigma(A)$.%, то $\norm{A} = M$.
+			то $m,\,M \in \sigma(A)$.
 		\end{theorem}
 		\begin{proof}
 			Из условий теоремы и из равносильного утверждения (\ref{eq:specCrit}) следует, что
@@ -1397,7 +1397,7 @@
 				$$\lambda \neq 0 \& \lambda \in \sigma(A) \Rightarrow \lambda \in \sigma_d $$
 			\end{theorem}
 			\begin{proof}
-				Пусть $\lambda \neq 0,\, \lambda \in \sigma(A)$. Тогда, по свойству (\label{eq:specCrit}) найдётся последовательность 
+				Пусть $\lambda \neq 0,\, \lambda \in \sigma(A)$. Тогда, по свойству (\ref{eq:specCrit}) найдётся последовательность 
 				векторов $\{x_n\}$, такая, что:
 		
 				$$\norm{x_n} = 1,\, A_{\lambda}x_n \rightarrow 0$$
