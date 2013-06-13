@@ -10,11 +10,13 @@
     urlcolor=black
 }
 
-\input{Includes/Base}
+% TODO: Убрать, когда потребуется отображать только год конспекта.
+\usepackage{datetime}
 
-% setcounter'ы требуются, чтобы нумерация не ехала, если захочется подключить только один из этих файлов.
-\newcommand{\includelect}[1]
-{\section*{Лекция #1}\addcontentsline{toc}{section}{Лекция #1}\input{Lectures/Lectures-#1}}%\setcounter{section}{#1}}
+% TODO: Убрать, когда добавим первые пять глав.
+\setcounter{section}{5}
+
+\input{Includes/Base}
 
 \begin{document}
 	\title{Основы функционального анализа и теории функций, четвёртый семестр.}
@@ -23,23 +25,19 @@
 		Лектор --- Тресков Сергей Андреевич\\
 		Лекции записаны Ремневым Михаилом
     }
-    \date{2013 год}
+    % TODO: Поменять на следующую строчку, когда не будет
+    % требоваться делать правки по три раза в день.
+    \date{Сборка выполнена \today, \currenttime}
+    %\date{2013 год}
     \maketitle
-    
+
     \tableofcontents % Вроде ок.
 
 	\pagebreak
-	
-    \includelect{1}
-    \includelect{2}
-    \includelect{3}
-    \includelect{4}
-    \includelect{5}
-    \includelect{6}
-    \includelect{7}
-    \includelect{8}
-    \includelect{9}
-    \includelect{10}
-    \includelect{11}
-    \includelect{12}
+
+	% TODO: Тут было \includelect{}. Надо бы сделать по аналогии с тем, что было.
+    \input{Chapters/Chapter-6}
+    \input{Chapters/Chapter-7}
+    \input{Chapters/Chapter-8}
+    \input{Chapters/Chapter-9}
 \end{document}
