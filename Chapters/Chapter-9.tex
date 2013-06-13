@@ -98,7 +98,7 @@
 		Для поиска экстремума функционала нам требуется ввести его определение. Вспомним определение 
 		экстремума функции (для определённости максимума) в точке $x=x_0$:
 
-			$$\forall x \exists \delta: |x - x_0| < \delta \Rightarrow y(x_0) \geq y(x)$$
+			$$\exists \delta \forall x: |x - x_0| < \delta \Rightarrow y(x_0) \geq y(x)$$
 
 		Мы можем ввести определение по аналогии, но стоит вопрос в том, какую норму для функций $y(x)$ выбрать
 		(в случае экстремума функции берётся <<норма>> от $x$ --- а это попросту модуль). Выбор стоит между 
@@ -113,12 +113,12 @@
 
 		\begin{defi}
 			$y_0(x)$ называется локальным максимумом функционала $I[y]$, если:
-			$$\forall y \exists \delta: \norm{y - y_0}_{C^1} < \delta \Rightarrow I[y_0] \geq I[y]$$
+			$$\exists \delta \forall y: \norm{y - y_0}_{C^1} < \delta \Rightarrow I[y_0] \geq I[y]$$
 		\end{defi}
 
 		\begin{defi}
 			$y_0(x)$ называется локальным минимумом функционала $I[y]$, если:
-			$$\forall y \exists \delta: \norm{y - y_0}_{C^1} < \delta \Rightarrow I[y_0] \leq I[y]$$
+			$$\exists \delta \forall y: \norm{y - y_0}_{C^1} < \delta \Rightarrow I[y_0] \leq I[y]$$
 		\end{defi}
 
 		\lecture{12}
