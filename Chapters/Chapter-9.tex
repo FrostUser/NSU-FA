@@ -358,7 +358,7 @@
 			$$
 				J'(\varepsilon)\lims{\varepsilon = 0}{} = 
 				\underset{D\hspace{10pt}}{\iint} \left( h\cdot\left(F_z - \frac{d}{dy}F_{z'_y} - \frac{d}{dx}F_{z'_x}\right) \right) \,dxdy
-				+ \underbracket{\underset{\partial D}{\oint} \left(hF_{z'_x}\,dy - hF_{z'_y}\,dx \right)}_{=0}
+				+ \underbracket{\underset{\partial D}{\oint} \left(hF_{z'_x}\,dy + hF_{z'_y}\,dx \right)}_{=0}
 			$$
 
 			Второй интеграл равняется нулю, так как функция $h(x, y)\lims{\partial D}{} \equiv 0$ потому что $\supp(h) \subset D$.
@@ -397,7 +397,7 @@
 				\left\{
 				\begin{aligned}
 					h(x) = \overline{y} - y \\
-					\delta x = \overline{x_1} - x_1
+					\delta x = \overline{x_1} - x_1 \\
 					\delta y = \overline{y}(x_1) - y(x_1)
 				\end{aligned}
 				\right.
@@ -405,7 +405,7 @@
 
 			$$I[\overline{y}] - I[y] = 
 	  			\underbracket{\int_{x_0}^{x_1} (F(x, y + h, y' + h') - F(x, y, y')) \,dx}_{I_1} +
-	  			\underbracket{\int_{\overline{x}_0}^{\overline{x}_1} F(x, \overline{y}, \overline{y}') \,dx}_{I_2}$$
+	  			\underbracket{\int_{x_1}^{\overline{x}_1} F(x, \overline{y}, \overline{y}') \,dx}_{I_2}$$
 	  
 			В подынтегральном выражении для $I_2$ стоит непрерывная функция. Значит, можем воспользоваться
 			теоремой о среднем.
@@ -425,13 +425,17 @@
 			Приращение интеграла $I_1$ можно записать по формуле Тейлора:
 			$$f(x + h) = f(x) + df\angular{h} + o(\mod{h})$$
 			Таким образом, 
-			$$I_1 = \int_{x_0}{x_1} (F_yh - F_{y'}h') \,dx + o\big(\rho(y, \overline{y})\big)$$
+			$$I_1 = \int_{x_0}^{x_1} (F_yh + F_{y'}h') \,dx + o\big(\rho(y, \overline{y})\big)$$
 	
 			$o(\ldots)$ ушло из подынтегрального выражения, так как интеграл берётся по конечному промежутку,
 			а умножение $o(\ldots)$ на константу ничего не меняет. Итак, интегрируем второе слагаемое по
 			частям:
 	
-			$$I_1 = \int_{x_0}{x_1} h\cdot(F_y - \frac{d}{dx}F_{y'}) \,dx + hF_{y'}\lims{x_0}{x_1} + o(\ldots) = \int_{x_0}^{x_1} h\cdot(F_y - \frac{d}{dx}F_{y'}) \,dx + h(x_1) F_{y'}\lims{x = x_1}{}$$
+			\begin{align*}
+				I_1 &= \int_{x_0}^{x_1} h\cdot\left(F_y - \frac{d}{dx}F_{y'}\right) \,dx + hF_{y'}\lims{x_0}{x_1} + 
+				o(\ldots) = \\
+				&= \int_{x_0}^{x_1} h\cdot\left(F_y - \frac{d}{dx}F_{y'}\right) \,dx + h(x_1) F_{y'}\lims{x = x_1}{}
+			\end{align*}
 
 			\lecture{13}
 
@@ -497,7 +501,7 @@
 			называется \textbf{условием трансверсальности}.
 
 			Рассмотрим частный случай, когда функция $F$ имеет вид $F(x, y, y') = f(x,y) \sqrt{1+y'^2}$.
-			Подставляя $F$ в \ref{eq:traversal}, получаем:
+			Подставляя $F$ в (\ref{eq:traversal}), получаем:
 
 			$$
 				\left( f \sqrt{1+y'^2} - y' f \frac{y'}{\sqrt{1+y'^2}} + \psi' f \frac{y'}{\sqrt{1+y'^2}} \right) \lims{x=x_1}{}
