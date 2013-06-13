@@ -1570,7 +1570,7 @@
 			{\color{gray} Здесь нужно ещё добавить пояснений, но у меня они ужасно записаны}
 			Тогда, в случае $\mathbb{R}^2$ достаточно рассмотреть функцию $\psi_n(x,y) = \varphi_n(x) \overline{\varphi_n}(y)$.
 			Понятно, что такие функции будут ортогональны. Для $\mathbb{R}^3$ можно перенумеровать эти функции каким-нибудь образом
-			и снова получить счётный ортонормированный базис.\opt
+			и снова получить счётный ортонормированный базис.
 			}
 		
 			\vspace{2pt}\hrule\vspace{2pt}
@@ -1578,24 +1578,24 @@
 			Рассмотрим случай $n=1$, хотя, как сказано выше, теорема выполнена $\forall n$. 
 			%\todo{Точно ли это? Или я неправильно понял?}
 			%{\color{gray}(С физиков это будет спрашиваться)}
-			$$(Af)(x) = \int_{\mathbb{R}} k(x,t) f(t) dt$$
+			$$(Af)(x) = \int_{\mathbb{R}} K(x,t) f(t) dt$$
 		
-			Знаем, что $\norm{A} \leq \norm{k}_{\mathbb{L}_2(\mathbb{R}^2)}$
+			Знаем, что $\norm{A} \leq \norm{K}_{\mathbb{L}_2(\mathbb{R}^2)}$
 		
-			Возьмём базис в $\mathbb{L}_2$: $\varphi_n(x)\overline{\varphi_m}(t)$.
+			Возьмём базис в $\mathbb{L}_2(\mathbb{R}^2)$: $\varphi_n(x)\overline{\varphi_m}(t)$.
 		
-			Тогда функция $k(x,t)$ может быть представлена рядом Фурье:
-			$$k(x,t) = \sum_{n,m}^{\infty}\lambda_{n,m}\varphi_n(x)\overline{\varphi}_m(t)$$
+			Тогда функция $K(x,t)$ может быть представлена рядом Фурье:
+			$$K(x,t) = \sum_{n,m}^{\infty}\lambda_{n,m}\varphi_n(x)\overline{\varphi}_m(t)$$
 		
 			Можем записать это как сходимость по норме к сумме $N$ слагаемых ряда Фурье при $N \rightarrow \infty$:
 			\begin{equation} \label{eq:partialFourierSum}
-				\norm{k(x,t) - \sum_{n,m\leq N}\lambda_{n,m}\varphi_n(x)\overline{\varphi}_m(t)} \rightarrow 0
+				\norm{K(x,t) - \sum_{n,m\leq N}\lambda_{n,m}\varphi_n(x)\overline{\varphi}_m(t)} \rightarrow 0
 			\end{equation}
 		
-			Рассмотрим оператор Гильберта-Шмидта $A_N$ с ядром $k_N$.
+			Рассмотрим оператор Гильберта-Шмидта $A_N$ с ядром $K_N$.
 			\begin{gather}
-				k_N(x,t) = \sum_{m,n \leq N} \lambda_{n,m} \varphi_n(x)\overline{\varphi}_m(t) \\
-				(A_Nf)(x) = \int_{\mathbb{R}} k_N(x,t) f(t) dt
+				K_N(x,t) = \sum_{m,n \leq N} \lambda_{n,m} \varphi_n(x)\overline{\varphi}_m(t) \\
+				(A_Nf)(x) = \int_{\mathbb{R}} K_N(x,t) f(t) dt
 			\end{gather}
 		
 			Образ $A_N$ попадает в $\left\{\sum_1^N \alpha_i \varphi_i \right\} \Rightarrow$ образ оператора $A_N$ 
