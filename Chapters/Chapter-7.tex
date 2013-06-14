@@ -1222,12 +1222,14 @@
 			$\sigma(A) = \sigma(A_L) \cup \sigma(A_{L^{\perp}})$.
 		\end{state}
 		\begin{proof}
-			Пусть $\lambda \in \sigma(A_L)$ находится собственное число. Для самосопряжённого оператора верно свойство 
-			(\ref{eq:specCrit}), то есть найдётся последовательность $\{x_n\}$, $\norm{x_n} = 1$, такая, что 
-			$\norm{A_{L \lambda}x_n}~\rightarrow~0$. Тогда будет гарантироваться, что 
+			Пусть $\lambda \in \sigma(A_L)$ --- собственное число. Для самосопряжённого оператора верно свойство 
+			(\ref{eq:specCrit}), то есть найдётся последовательность $\{x_n\} \subset L$, $\norm{x_n} = 1$, такая, что 
+			$\norm{A_{L \lambda}x_n}~\rightarrow~0$. Это будет выполняться и для $A$: $\norm{A_{\lambda}x_n}
+			\rightarrow 0$. Показывая аналогичный факт для $A_{L^{\perp}}$, получаем, что
 			$$\sigma(A) \supset \big(\sigma(A_L) \cup \sigma(A_{L^{\perp}})\big)$$
 		
-			Осталось доказать "$\subset$". Пусть $\lambda \in \sigma(A)$, но $\lambda \notin \sigma(A_L) \cup \sigma(A_{L^{\perp}})$, то есть
+			Осталось доказать "$\subset$". Пусть $\lambda \in \sigma(A)$, но $\lambda \notin 
+			\sigma(A_L) \cup \sigma(A_{L^{\perp}})$, то есть
 			$$
 			\left.
 			\begin{aligned}
@@ -1253,7 +1255,8 @@
 				\norm{A_{\lambda}h}^2 \geq C^2\norm{h}^2
 			\end{gather*}
 		
-			А это значит, что $\lambda \notin \sigma(A)$, получаем противоречие. Следовательно все $\lambda in \sigma(A)$ лежат и в $\big(\sigma(A_L) \cup \sigma(A_{L^{\perp}})\big)$. Тогда
+			А это значит, что $\lambda \notin \sigma(A)$, получаем противоречие. Следовательно все $\lambda in \sigma(A)$ лежат и в 
+			$\big(\sigma(A_L) \cup \sigma(A_{L^{\perp}})\big)$. Тогда
 			$$\sigma(A) \subset \big(\sigma(A_L) \cup \sigma(A_{L^{\perp}})\big)$$
 		
 			Таким образом, получили совпадение этих двух множеств, что и требовалось доказать.
@@ -1267,7 +1270,7 @@
 			которая
 			\begin{itemize}
 				\item Сходится.
-				\item Лежит в $K$.
+				\item Её предел лежит в $K$.
 			\end{itemize}
 		\end{defi}
 	
@@ -1430,7 +1433,7 @@
 				Используем компактность оператора $A$. Так как $\{x_n\}$ --- ограниченная последовательность ($\norm{x_n} = 1$), то
 				мы можем выбрать последовательность $\{x_{n_k}\}$, которую $A$ переведёт в фундаментальную. 
 				Положим $Ax_{n_k}\rightarrow y_0$. При этом, так как $\{x_{n_k}\}$ --- подпоследовательность $\{x_{n}\}$, 
-				сохранится свойство $Ax_{n_k} \rightarrow 0$.
+				сохранится свойство $A_{\lambda}x_{n_k} \rightarrow 0$.
 				$$
 				\begin{CD}
 					A_{\lambda}x_{n_k} @.=@. Ax_{n_k} @.-@. \lambda x_{n_k} \\
@@ -1439,7 +1442,8 @@
 				\end{CD}
 				$$
 		
-				Отсюда очевидно следует, что $\lambda x_{n_k} \rightarrow y_0$ (и $x_{n_k} \rightarrow \frac{y_0}{\lambda}$). Тогда, для второго предела получаем (при $\lambda \neq 0$)
+				Отсюда очевидно следует, что $\lambda x_{n_k} \rightarrow y_0$ (и $x_{n_k} \rightarrow \frac{y_0}{\lambda}$). Тогда, 
+				для второго предела получаем (при $\lambda \neq 0$)
 				$$A\dfrac{y_0}{\lambda} = y_0 \Rightarrow Ay_0 = \lambda y_0$$
 		
 				То есть $y_0$ --- собственный вектор и тогда $\lambda \in \sigma_d(A)$.
@@ -1467,7 +1471,9 @@
 			Рассматривается ортогональное дополнение к этим подпространствам и из супремумов квадратичной формы на
 			этих ортогональных дополнениях берётся точная нижняя грань.}
 	
-			Как найти $\lambda_1$? Мы доказали ранее, что для самосопряжённого оператора $\sigma_A \in [m,M]$, причём $m, M \in \sigma_A$. А если $0 < m < M$, то $\norm{A} = max\left\lbrace|m|, |M|\right\rbrace = M$. На этом и базируется следующее утверждение:
+			Как найти $\lambda_1$? Мы доказали ранее, что для самосопряжённого оператора $\sigma_A \in [m,M]$, причём 
+			$m, M \in \sigma_A$. А если $0 < m < M$, то $\norm{A} = max\left\lbrace|m|, |M|\right\rbrace = M$. На этом 
+			и базируется следующее утверждение:
 
 			\begin{state}
 				\label{st:KingOfDiscreteSpectra}
