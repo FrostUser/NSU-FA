@@ -672,7 +672,7 @@
 					\right.
 				\end{equation*}
 				
-				Выпишем рекуррентное соотношение (\ref{eq:recurrent}) в точке $x=x_0$:
+				Выпишем рекуррентное соотношение \eqref{eq:recurrent} в точке $x=x_0$:
 				\begin{equation*}
 				{\color{red} x_0 q_n(x_0)} = {\color{red} \frac{a_n}{a_{n+1}} q_{n+1}(x_0)} + 
 					{\color{red} \left(\frac{b_n}{a_n} - \frac{b_{n+1}}{a_{n+1}}\right) q_n(x_0)} + \frac{a_{n-1}}{a_n} q_{n-1}(x_0)
@@ -697,7 +697,7 @@
 		\begin{state}
 			$q_n(x_0) \Rightarrow q_{n-1}(x_0) q_{n+1}(x_0) < 0$.
 			\begin{proof}
-				Для доказательства этого факта воспользуемся выведенной рекуррентной формулой (\ref{eq:recurrent}), учитывая, что $q(x_0) = 0$:
+				Для доказательства этого факта воспользуемся выведенной рекуррентной формулой \eqref{eq:recurrent}, учитывая, что $q(x_0) = 0$:
 				$$ {\color{gray}x_0 \cdot 0} = 
 				\frac{a_n}{a_{n+1}} q_{n+1}(x) + {\color{gray}\left(\frac{b_n}{a_n} - 
 				\frac{b_{n+1}}{a_{n+1}}\right) \cdot 0} + \frac{a_{n-1}}{a_n} q_{n-1}(x)$$
@@ -774,7 +774,7 @@
 				\item \textbf{рекуррентная формула}
 
 				Рекуррентная формула задаёт соотношения для нескольких многочленов. В общем виде мы вывели
-				эту формулу ранее (см (\ref{eq:recurrent})):
+				эту формулу ранее (см \eqref{eq:recurrent}):
 				$$x \cdot q_n(x) = \frac{a_n}{a_{n+1}} q_{n+1} (x) + 
 					\left(\frac{b_n}{a_n} - \frac{b_{n+1}}{a_{n+1}}\right) q_n(x) + \frac{a_{n-1}}{a_n} q_{n-1}(x)$$
 
@@ -823,7 +823,7 @@
 			равно нулю и получаем, что
 			$$n \neq m \qquad \scal{H_n}{H_m} = 0$$
 			Если же предположить, что $n=m$, то, применяя такие же шаги, что и в прошлых вычислениях, прийдём к выражению вида 
-			(\ref{eq:HermiteScalProd}) с $n=m$. 
+			\eqref{eq:HermiteScalProd} с $n=m$. 
 			%получаем интеграл Пуассона, который 
 			%равняется $\sqrt{\pi}$.
 			\begin{equation*}
